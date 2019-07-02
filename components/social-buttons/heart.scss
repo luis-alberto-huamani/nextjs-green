@@ -1,0 +1,20 @@
+@import '../../layout/variables';
+
+.btn_social{
+  color: #fff;
+  svg{
+    fill: #fff;
+    width: 30px;
+    height: 30px;
+    transition: .5s ease;
+  }
+  &:hover{
+    svg{
+      fill: $prim;
+    }
+    color: $prim;
+  }
+  &:focus{
+    outline: none;
+  }
+}

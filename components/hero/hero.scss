@@ -1,0 +1,13 @@
+@import '../../layout/variables';
+
+.hero_main_cont{
+  height: 100vh;
+  background: url('/static/hero-0.jpg') bottom center no-repeat;
+  background-size: cover;
+  .social_nav_cont{
+    //border: 1px solid red;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+  }
+}

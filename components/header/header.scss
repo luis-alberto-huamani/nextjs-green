@@ -1,0 +1,16 @@
+@import '../../layout/variables';
+
+
+.header_main{
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  padding: .3rem 0;
+}
+
+.header_main_cont{
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,13 +1,8 @@
-import Link from "next/link";
-import Header from "../components/header";
+import Layout from '../components/layout/layout';
+import Hero from '../components/hero/hero';
 
 export default () => (
-  <main>
-    <Header />
-    <section>
-      <Link href="/about">
-        <h1>Hola mundo</h1>
-      </Link>
-    </section>
-  </main>
+  <Layout>
+    <Hero />
+  </Layout>
 );

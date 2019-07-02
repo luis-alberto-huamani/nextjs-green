@@ -7105,6 +7105,23 @@ a.text-dark:hover, a.text-dark:focus {
   .btn_social:focus {
     outline: none; }
 
+.gifts_cont {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100px; }
+  .gifts_cont li svg {
+    margin: .2rem;
+    width: 25px;
+    height: 25px;
+    fill: #8bb940; }
+  .gifts_cont li:hover svg {
+    fill: #ff6c1a;
+    cursor: pointer; }
+
 .hero_main_cont {
   height: 100vh;
   background: url("/static/hero-0.jpg") bottom center no-repeat;
@@ -7113,6 +7130,8 @@ a.text-dark:hover, a.text-dark:focus {
     height: 100vh;
     display: flex;
     align-items: flex-end; }
+    .hero_main_cont .social_nav_cont .social_nav {
+      display: flex; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/

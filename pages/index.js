@@ -6,3 +6,5 @@ export default () => (
     <Hero />
   </Layout>
 );
+
+//{"src":"package.json","use":"@now/static-build"}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Heart from '../social-buttons/heart';
+import Gift from '../social-buttons/gift';
 import './hero.scss';
 
 class Hero extends Component{
@@ -16,6 +17,7 @@ class Hero extends Component{
               <div className="social_nav_cont">
                 <nav className="social_nav">
                   <Heart />
+                  <Gift />
                 </nav>
               </div>
             </div>

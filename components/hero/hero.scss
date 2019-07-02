@@ -13,4 +13,42 @@
       display: flex;
     }
   }
+  .msg_cont{
+    display: flex;
+    height: 100vh;
+    color: #fff;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .msg_cont-1{
+    //height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    color: #fff;
+    h1{
+      color: transparent !important;
+      -webkit-text-stroke: 2px #fff;
+      text-transform: uppercase;
+      font-size: 72px;
+      margin-bottom: 0;
+    }
+    .msg_complementary{
+      margin-bottom: .7rem;
+      p{
+        margin: 0;
+        padding: 0;
+        line-height: 1rem;
+      }
+    }
+  }
+  .msg_cont-2{
+    display: flex;
+    align-items: flex-end;
+    p{
+      font-size: 36px;
+      margin: 0;
+      padding: 0;
+      margin-left: 1rem;
+    }
+  }
 }

@@ -42,3 +42,12 @@
     }
   }
 }
+.send_comment{
+  outline: none;
+  &:hover{
+    color: $prim;
+  }
+  &:focus{
+    outline: none;
+  }
+}

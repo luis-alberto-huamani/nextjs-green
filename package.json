@@ -2,7 +2,8 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "next build && next export -o dist",
+    "build": "next build",
+    "now-build": "next build && next export -o dist",
     "now-dev": "next -p $PORT"
   },
   "dependencies": {

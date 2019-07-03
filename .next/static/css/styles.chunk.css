@@ -7305,7 +7305,8 @@ a.text-dark:hover, a.text-dark:focus {
     display: flex;
     align-items: flex-end; }
     .hero_main_cont .social_nav_cont .social_nav {
-      display: flex; }
+      display: flex;
+      margin-bottom: 1rem; }
   .hero_main_cont .msg_cont {
     display: flex;
     height: 100vh;

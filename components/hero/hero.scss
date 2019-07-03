@@ -46,8 +46,10 @@
     height: 100vh;
     display: flex;
     align-items: flex-end;
+    
     .social_nav{
       display: flex;
+      margin-bottom: 1rem;
     }
   }
   .msg_cont{

@@ -9,6 +9,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
+    "cleave.js": "^1.4.10",
     "next": "latest",
     "popper.js": "^1.15.0",
     "react": "latest",

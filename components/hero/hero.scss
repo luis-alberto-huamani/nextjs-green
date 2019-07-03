@@ -1,9 +1,46 @@
 @import '../../layout/variables';
+@import '../../layout/mixins';
 
 .hero_main_cont{
+  position: relative;
   height: 100vh;
   background: url('/static/hero-0.jpg') bottom center no-repeat;
   background-size: cover;
+  overflow: hidden;
+  form{
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    .inputs_cont{
+      width: 50%;
+    }
+    .btn_next{
+      margin: auto;
+      align-self: flex-end;
+      margin-top: 30%;
+      margin-right: 20%;
+      background: transparent;
+      border: none;
+      &:hover{
+        cursor: pointer;
+        svg{
+          fill: $danger;
+        }
+      }
+      .next{
+        transition: .5s ease;
+        width: 100px;
+        height: 100px;
+        fill: #fff;
+      } 
+    }
+  }
   .social_nav_cont{
     //border: 1px solid red;
     height: 100vh;
@@ -23,8 +60,12 @@
   .msg_cont-1{
     //height: 100vh;
     display: flex;
+    //width: 80%;
     align-items: flex-end;
     color: #fff;
+    position: relative;
+    z-index: 110;
+    //border: 1px solid red;
     h1{
       color: transparent !important;
       -webkit-text-stroke: 2px #fff;
@@ -42,8 +83,12 @@
     }
   }
   .msg_cont-2{
-    display: flex;
+    //border: 1px solid red;
+    display: inline-flex;
+    //width: 65%;
     align-items: flex-end;
+    position: relative;
+    z-index: 110;
     p{
       font-size: 36px;
       margin: 0;
@@ -51,4 +96,32 @@
       margin-left: 1rem;
     }
   }
+}
+
+@media (min-width: 1280px) {
+  .hero_main_cont{
+    .msg_cont-1{
+      h1{
+        font-size: 92px;
+      }
+      p{
+        font-size: 24px;
+        line-height: 1.5rem;
+      }
+    }
+  }
+}
+
+.vertical_text{
+  transform: rotate(-90deg);
+  font-size: 11px;
+  transform-origin: right top 0;
+  position: absolute;
+  right: 2vw;
+  top: 15vh;
+  color: #fff;
+  text-transform: capitalize;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  z-index: 110;
 }

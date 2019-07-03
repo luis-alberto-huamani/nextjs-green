@@ -1,5 +1,51 @@
 @import '../../layout/variables';
 
+.my_button{
+  button{
+    background: transparent;
+    border: none;
+    outline: none;
+    transition: .5s ease;
+    padding: .2rem .3rem;
+    font-size: $font-sm !important;
+    &:focus{
+      outline: none;
+    }
+  }
+  .light{
+    border: 1px solid #fff;
+    color: #fff;
+    &:hover{
+      background: $prim;
+      cursor: pointer;
+    }
+    &:active{
+      background: $sec;
+    }
+  }
+  .dark{
+    border-color: $prim;
+    color: $prim;
+    border: 1px solid $prim;
+    &:hover{
+      background: $prim;
+      color: #fff;
+      cursor: pointer;
+    }
+    &:active{
+      background: $prim;
+    }
+  }
+  .md{
+    padding: .3rm .5rem;
+    font-size: $font-md;
+    border-width: 3px;
+  }
+  .lg{
+    padding: .3rem .5rem;
+    font-size: 36px !important;
+    border-width: 5px;
+  }
 button{
   background: transparent;
   border: none;
@@ -44,4 +90,5 @@ button{
   padding: .3rem .5rem;
   font-size: 36px !important;
   border-width: 5px;
+}
 }

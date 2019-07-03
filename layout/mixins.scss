@@ -1,0 +1,3 @@
+@mixin gradient($deg) {
+  background: linear-gradient($deg+deg, $prim, $sec, $tri);
+}

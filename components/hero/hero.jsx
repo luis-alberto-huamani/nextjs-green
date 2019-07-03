@@ -12,7 +12,7 @@ class Hero extends Component{
   constructor(props){
     super(props);
     this.state= {
-      register: true,
+      register: false,
     }
     this.onRegister = this.onRegister.bind(this);
   }

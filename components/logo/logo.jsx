@@ -3,7 +3,11 @@ import classnames from 'classnames';
 
 const Logo = ({ size, color }) => (
   <div className="logo_cont">
-    <a href="/">
+    <a
+    className={classnames({
+      dark: color === 'dark',
+    })}
+    href="/">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"

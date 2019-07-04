@@ -79,7 +79,7 @@ class Input extends Component{
               )
             }
           </div>
-          <Popover placement="right" target={id} isOpen={pop}>
+          <Popover placement="bottom" target={id} isOpen={pop}>
             <PopoverBody>
               {popText}
             </PopoverBody>

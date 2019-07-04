@@ -1,0 +1,20 @@
+@import '../../layout/variables';
+
+.greetings_main_cont{
+  color: $prim;
+  text-align: center;
+  .svg_cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0;
+    span{
+      font-size: 72px;
+    }
+    svg{
+      fill: $prim;
+      width: 100px;
+      height: 100px;
+    }
+  }
+}

@@ -4,7 +4,7 @@
 .reigster_cont{
   @include gradient(45);
   display: flex;
-  padding-top: 10%;
+  padding-top: 2%;
   color: #fff;
   text-align: center;
   align-items: center;
@@ -23,4 +23,11 @@
 
 .slideOutRight {
   right: -200vw;
+}
+
+@media (min-width: 1280px) {
+
+  .reigster_cont{
+    padding-top: 10%;
+  }
 }

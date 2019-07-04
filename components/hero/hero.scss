@@ -23,8 +23,8 @@
     .btn_next{
       margin: auto;
       align-self: flex-end;
-      margin-top: 30%;
-      margin-right: 20%;
+      margin-top: 10%;
+      margin-right: 10%;
       background: transparent;
       border: none;
       &:hover{
@@ -49,7 +49,6 @@
     
     .social_nav{
       display: flex;
-      margin-bottom: 1rem;
     }
   }
   .msg_cont{
@@ -78,6 +77,7 @@
     .msg_complementary{
       margin-bottom: .7rem;
       p{
+        font-size: $font-md;
         margin: 0;
         padding: 0;
         line-height: 1rem;
@@ -100,20 +100,6 @@
   }
 }
 
-@media (min-width: 1280px) {
-  .hero_main_cont{
-    .msg_cont-1{
-      h1{
-        font-size: 92px;
-      }
-      p{
-        font-size: 24px;
-        line-height: 1.5rem;
-      }
-    }
-  }
-}
-
 .vertical_text{
   transform: rotate(-90deg);
   font-size: 11px;
@@ -126,4 +112,31 @@
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   z-index: 110;
+}
+
+@media (min-width: 1280px) {
+  .hero_main_cont{
+    form{
+      .btn_next{
+        margin-top: 30%;
+        margin-right: 20%;
+      }
+    }
+    .msg_cont-1{
+      h1{
+        font-size: 92px;
+      }
+      .msg_complementary{
+        p{
+          font-size: 24px;
+          line-height: 1.5rem;
+        }
+      }
+    }
+    .social_nav_cont{      
+      .social_nav{
+        margin-bottom: 1rem;
+      }
+    }
+  }
 }

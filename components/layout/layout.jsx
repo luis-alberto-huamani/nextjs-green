@@ -9,7 +9,7 @@ const Layout = ({ children }) => (
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
       <link rel="stylesheet" href="/static/animate.min.css"/>
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico&display=swap" rel="stylesheet" />
+{/*<link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico&display=swap" rel="stylesheet" />*/}
       <title>Greenlink | Comparte con los tuyos</title>
     </Head>
     <Header />

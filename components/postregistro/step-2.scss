@@ -1,0 +1,62 @@
+@import '../../layout/variables';
+//@import '../../layout/mixins';
+
+.frontPic_main_cont{
+  background: $prim;
+  padding: .5rem;
+  height: 80%;
+  label{
+    position: relative;
+    border: 5px dashed #fff;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    img{
+      min-width: 100%;
+      height: 40vh;
+      object-fit: cover;
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  svg{
+    fill: #fff;
+    padding: .5rem;
+    width: 150px;
+    height: 150px;
+    padding: 0;
+    margin: 0 auto;
+  }
+  input[type=file]{
+    position: absolute;
+    width: 0 !important;
+    height: 0;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.my_input_cont{
+  .input_cont{
+    margin: 0;
+  }
+  width: 50%;
+  label{
+    margin: 0;
+  }
+  input{
+    margin-bottom: 0;
+  }
+}
+
+.portada_title{
+  color: $prim;
+  font-size: 24px;
+  line-height: 1rem;
+}

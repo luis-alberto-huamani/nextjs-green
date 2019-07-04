@@ -27,3 +27,23 @@
     }
   }
 }
+.dark{
+  svg{
+    transition: .5s ease;
+    width: 30px;
+    height: 30px;
+    fill: $prim;
+  }
+  span{
+    transition: .5s ease;
+    color: $prim;
+  }
+  &:hover{
+    svg{
+      fill: $sec;
+    }
+    span{
+      color: $sec;
+    }
+  }
+}

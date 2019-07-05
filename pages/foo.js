@@ -24,13 +24,34 @@ class Foo extends Component{
   }
 
   onFile(e) {
-    this.setState({ img: e.target.files[0] });
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      this.setState({ img: reader.result });
+    }
+    if(e.target.files[0]){
+      reader.readAsDataURL(e.target.files[0]);
+    }
   }
 
   onSubmit(e) {
     e.preventDefault();
     const { img, name } = this.state;
-    const data = new FormData();
+    const data = {
+      img,
+      name,
+    };
+    const options={
+      headers: { "Content-Type" : "application/json" },
+      method: 'POST',
+      body: JSON.stringify(data),
+    };
+
+    fetch('/api/foo.js', options)
+      .then(res => res.text()).then(res => {
+        this.setState({ url: res })
+      });
+
+    /*const data = new FormData();
     data.append('avatar', img);
     data.append('name', name);
     const options={
@@ -38,9 +59,9 @@ class Foo extends Component{
       body: data,
     }
     console.log(data);
-    fetch('/api/foo.js', options).then(res => res.json()).then(res => {
+    fetch('http://localhost:4000/api/foo', options).then(res => res.json()).then(res => {
       this.setState({ url: res.img.path })
-    });
+    });*/
   }
 
   render() {

@@ -1,23 +1,22 @@
 const app = require('./util/app');
-const multer = require('multer');
+const cloudinary = require('cloudinary').v2;
+const dotenv = require('dotenv');
+dotenv.config();
 
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './static')
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now())
-  }
-})
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET
+});
 
-const upload = multer({ storage: storage });
-
-app.post('*', upload.single('avatar'), async (req,res) => {
-  const data = {
-    img: req.file,
-    name: req.body.name,
-  };
-  res.status(200).json(data);
+app.post('*', async (req, res) => {
+  const img = req.body.img;
+  const name = req.body.name;
+  const url = await cloudinary.uploader.upload(img, (error, result) => {
+    return result;
+  });
+  console.log(url.url);
+  res.status(201).send(url.url);
 });
 
 module.exports = app;

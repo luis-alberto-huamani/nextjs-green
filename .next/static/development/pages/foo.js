@@ -28483,7 +28483,7 @@ function (_Component) {
         body: data
       };
       console.log(data);
-      fetch('http://localhost:4000/api/foo.js', options).then(function (res) {
+      fetch('/api/foo.js', options).then(function (res) {
         return res.json();
       }).then(function (res) {
         _this2.setState({

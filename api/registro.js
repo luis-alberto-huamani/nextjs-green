@@ -4,7 +4,7 @@ const UserSchema = require('../models/user');
 
 [...mongooseConnect];
 
-app.post('*', async (req, res) => {
+app.get('*', async (req, res) => {
   res.status(200).send('hola mundo');
 });
 

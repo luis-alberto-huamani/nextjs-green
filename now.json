@@ -1,6 +1,9 @@
 {
   "version": 2,
   "name": "nextjs-green",
+  "env": {
+    "URI_DB": "mongodb://greenlinkproject:greenpass1@ds050739.mlab.com:50739/greenlink" 
+  },
   "builds": [
     {"src":"package.json","use":"@now/static-build"},
     { "src": "api/*.js", "use": "@now/node" }

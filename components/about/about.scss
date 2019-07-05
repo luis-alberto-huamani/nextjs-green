@@ -32,6 +32,11 @@
     bottom: 0;
     margin-top: 2%;
   }
+  .logo_about_cont{
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+  }
 }
 
 .about_main_cont::after{
@@ -47,7 +52,7 @@
   content: '';
   position: absolute;
   right: 0;
-  background:url('/static/pico1.jpg') center top no-repeat;
+  background:url('/static/about.jpg') center top no-repeat;
   background-size: cover;
   width: 70%;
   height: 100vh;

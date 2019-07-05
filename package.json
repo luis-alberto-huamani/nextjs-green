@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "start": "nodemon api/server.js",
     "now-build": "next build && next export -o dist",
     "now-dev": "next -p $PORT"
   },
@@ -17,6 +18,7 @@
     "express": "^4.17.1",
     "helmet": "^3.18.0",
     "mongoose": "^5.6.3",
+    "multer": "^1.4.1",
     "next": "latest",
     "popper.js": "^1.15.0",
     "react": "latest",

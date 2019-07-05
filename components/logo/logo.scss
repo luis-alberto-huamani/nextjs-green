@@ -2,6 +2,7 @@
 
 .logo_cont{
   font-family: 'Pacifico';
+  padding: .3rem 0;
   a{
     text-decoration: none;
     &:hover{
@@ -20,10 +21,11 @@
   }
   &:hover{
     svg{
-      fill: $prim;
+      //fill: $sec;
     }
     span{
-      color: $prim;
+      //color: $sec;
+      text-decoration: underline;
     }
   }
 }

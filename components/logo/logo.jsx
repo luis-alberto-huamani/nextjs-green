@@ -2,7 +2,7 @@ import './logo.scss';
 import classnames from 'classnames';
 
 const Logo = ({ size, color }) => (
-  <div className="logo_cont">
+  <div title="Inicio" className="logo_cont">
     <a
     className={classnames({
       dark: color === 'dark',

@@ -47,6 +47,7 @@ class Input extends Component{
       color,
       placeholder,
       label,
+      style,
     } = this.props;
     const { eye } = this.state;
     return(
@@ -56,7 +57,10 @@ class Input extends Component{
           input_cont: true,
           light: color === 'light',
           dark: color === 'dark',
-        })}>
+          
+        })}
+          style={style}
+        >
           <label htmlFor={id}>{label}</label>
           <div className="input_eye">
             <input

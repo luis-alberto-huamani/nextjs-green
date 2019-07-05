@@ -18,6 +18,7 @@ class RegisterCont extends Component{
         slideInRight: isOpen,
         slideOutRight: !isOpen,
       })}>
+        <h1>Registro</h1>
         {children}
       </div>
     );

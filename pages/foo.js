@@ -38,7 +38,7 @@ class Foo extends Component{
       body: data,
     }
     console.log(data);
-    fetch('http://localhost:4000/api/foo.js', options).then(res => res.json()).then(res => {
+    fetch('/api/foo.js', options).then(res => res.json()).then(res => {
       this.setState({ url: res.img.path })
     });
   }

@@ -2,22 +2,17 @@ import React, { Component } from 'react';
 import HeaderPost from '../components/postregistro/header';
 import BodyPost from '../components/postregistro/body';
 
-class PostRegistro extends Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      mail: '',
-    }
-  }
+const PostRegistro = ({ id }) => (
+  <section>
+    <HeaderPost />
+    <BodyPost id={id} />
+  </section>
+);
 
-  render() {
-    return(
-      <section>
-        <HeaderPost />
-        <BodyPost />
-      </section>
-    );
-  }
-};
+
+PostRegistro.getInitialProps = ({ query }) => {
+  const { id } = query;
+  return { id };
+}
 
 export default PostRegistro;

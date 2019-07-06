@@ -7,6 +7,7 @@ const UserSchema = new Schema({
   name: String,
   lastName: String,
   birthday: String,
+  history: String,
   interest: { type: String, default: 'Indefinido' },
   perfilImg: { type: String, default: '/static/queengreen.jpg' },
   frontPageImg: { type: String, default: '/static/queenfront.jpg' },

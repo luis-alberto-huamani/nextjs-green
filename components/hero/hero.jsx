@@ -15,7 +15,7 @@ class Hero extends Component{
   constructor(props){
     super(props);
     this.state= {
-      register: true,
+      register: false,
       spinner: false,
       registerForm: true,
       mail: '',
@@ -64,11 +64,12 @@ class Hero extends Component{
         body: JSON.stringify(data),
       }
       this.setState({ spinner:true })
-      fetch('http://localhost:4000/registro', options)
+      fetch('/api/registro.js', options)
         .then((res)=> {
           if (res.status === 201) {
-            Router.push('/postregistro')
-            res.text().then(res => console.log(res))
+            res.text().then((res) => {
+              Router.push(`/postregistro?id=${res}`);
+            })
           } else {
             this.setState({ mailError: true, spinner: false });
           }
@@ -79,7 +80,6 @@ class Hero extends Component{
   render() {
     const {
       register,
-      registerForm,
       mail,
       mailError,
       mailPop,
@@ -125,7 +125,7 @@ class Hero extends Component{
                   onFocus={this.handleFocus}
                 />
               </div>
-              <button type="submit" className="btn_next">{arrowCircle}</button>
+              <button type="submit" className="btn_next shadow">{arrowCircle}</button>
             </form>
             )
           }
@@ -138,25 +138,25 @@ class Hero extends Component{
             <div className="col-3">
               <div className="social_nav_cont">
                 <nav className="social_nav">
-                  <Heart />
-                  <Share />
-                  <Gift />
-                  <Comment />
+                  <Heart className="fadeIn" />
+                  <Share className="fadeIn delay-1s" />
+                  <Gift className="fadeIn delay-2s" />
+                  <Comment className="fadeIn delay-3s" />
                 </nav>
               </div>
             </div>
             <div className="col-7">
               <div className="msg_cont">
-                <div className="msg_cont-2">
+                <div className="msg_cont-2 animated fadeIn delay-5s">
                   <Button onClick={this.onRegister} size="lg" color="light">Unete</Button>
-                  <p>A Greenlink y</p>
+                  <p>A Greenlink</p>
                 </div>
                 <div className="msg_cont-1">
-                  <h1>Comparte</h1>
+                  <h1 className="animated fadeIn delay-2s">Comparte</h1>
                   <div className="msg_complementary">
-                    <p>Disfruta,</p>
-                    <p>Diviertete,</p>
-                    <p>Gana greencoins</p>
+                    <p className="animated fadeIn delay-3s">Disfruta,</p>
+                    <p className="animated fadeIn delay-4s">Diviertete,</p>
+                    <p className="animated fadeIn delay-5s">Gana greencoins</p>
                   </div>
                 </div>
               </div>

@@ -1,0 +1,42 @@
+@import '../../layout/variables';
+
+.notifications_cont{
+  display: flex;
+  margin-right: 1rem;
+  ul{
+    list-style: none;
+  }
+  .btn_not_cont{
+    button{
+      background: transparent;
+      border: none;
+      transition: .5 ease;
+      cursor: auto;
+      svg{
+        transition: .5 ease;
+        width: 20px;
+        height: 20px;
+        fill: #fff;
+        cursor: pointer;
+      }
+      &:focus{
+        outline: none;
+      }
+    }
+    span{
+      color: #fff;
+      font-size: 14px;
+      user-select: none;
+    }
+    &:hover{
+      svg{
+        fill: $prim;
+        transition: .5 ease;
+      }
+      span{
+        color: $prim;
+        transition: .5 ease;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../layout/variables';
+@import '../../layout/functions';
+@import '../../layout/mixins';
+@import '../../layout/base';
+
+.body{
+  height:2000px;
+}
+
+.perfil_main_cont{
+  height: 100vh;
+  margin: 0 auto;
+  width: 95%;
+  margin-top: 12vh;
+}

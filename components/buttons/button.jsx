@@ -2,7 +2,7 @@ import './button.scss';
 import classnames from 'classnames';
 
 const Button = ({ id, color, size, onClick, type, children }) => (
-  <div className="my_button">
+  <div className="my_button shadow">
     <button
       id={id}
       color={color}  

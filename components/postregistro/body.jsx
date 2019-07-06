@@ -7,6 +7,7 @@ import Step3 from './step-3';
 import Button from '../buttons/button';
 import Spinner from '../spinner/spinner';
 import Greetings from './greeting';
+import Router from 'next/router';
 
 class BodyPost extends Component{
   constructor(props){
@@ -103,20 +104,36 @@ class BodyPost extends Component{
       frontPic,
       frontQuote,
     } = this.state;
+    const { id } = this.props;
     const data = {
-      perfilImg: perfilPic,
+      id,
       name,
       lastName,
+      perfilImg: perfilPic,
       history,
       birthday,
       interest,
       frontPageImg: frontPic,
       frontPageQuote: frontQuote,
     };
+    const options = {
+      headers: { "Content-Type": "application/json" },
+      method: "POST",
+      body: JSON.stringify(data)
+    }
     this.setState({ step3: false, spinner: true });
-    setTimeout(()=>{
-      this.setState({ spinner: false, greetings: true });
-    },2000)
+    fetch('/api/postregistro.js', options)
+      .then(res => {
+        if (res.status === 201) {
+          this.setState({ spinner: false, greetings: true });
+          res.json()
+            .then((res) => {
+              setTimeout(()=>{
+                Router.push(`/perfil?id=${id}`)
+              },2000)
+            })
+        }
+      })
   };
 
 

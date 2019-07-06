@@ -1,0 +1,40 @@
+@import '../../layout/variables';
+.popOver_nav{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li{
+    width: 100%;
+    display: inline-block;
+  }
+  a{
+    text-align: center;
+    color: $prim;
+    text-decoration: none;
+    font-size: $font-8;
+    border-radius: 2px;
+    display: block;
+    width: 100%;
+    &:hover{
+      text-decoration: none;
+      background: $prim;
+      color: #fff;
+    }
+  }
+  button{
+    text-align: center;
+    color: $prim;
+    font-size: $font-8;
+    border-radius: 2px;
+    width: 100%;
+    background: transparent;
+    border-style: solid;
+    outline: none;
+    border: none;
+    &:hover{
+      text-decoration: none;
+      background: $prim;
+      color: #fff;
+    }
+  }
+};

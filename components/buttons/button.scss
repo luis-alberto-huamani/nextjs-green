@@ -24,7 +24,7 @@
     }
   }
   .dark{
-    border-color: $prim;
+    background: $prim;
     color: $prim;
     border: 1px solid $prim;
     &:hover{
@@ -60,12 +60,13 @@ button{
 .light{
   border: 1px solid #fff;
   color: #fff;
+  background: $prim;
   &:hover{
-    background: $prim;
+    background: $sec;
     cursor: pointer;
   }
   &:active{
-    background: $sec;
+    transform: scale(.98);
   }
 }
 .dark{

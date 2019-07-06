@@ -3,7 +3,6 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "nodemon api/server.js",
     "now-build": "next build && next export -o dist",
     "now-dev": "next -p $PORT"
   },

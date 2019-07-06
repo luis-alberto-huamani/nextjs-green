@@ -8,7 +8,6 @@
     "API_SECRET": "0AmLH5Ktdy600OCgK6QDC_Tg5fU"
   },
   "builds": [
-    {"src":"package.json","use":"@now/static-build"},
     { "src": "api/*.js", "use": "@now/node" }
   ]
 }

@@ -1,8 +1,15 @@
 const app = require('./util/app');
 const mongooseConnect = require('./util/mongoose');
+const cloudinary = require('cloudinary').v2;
 const UserSchema = require('../models/user');
 
 [...mongooseConnect];
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET
+});
 
 app.post('*', async (req, res) => {
   const {

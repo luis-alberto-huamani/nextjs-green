@@ -6,8 +6,9 @@ const UserSchema = require('../models/user');
 
 app.post('*', async (req, res) => {
   const { mail, pass } = req.body;
-  const newUser = new UserSchema(mail, pass);
-  const isRegistred = await UserSchema.findOne({ mail: mail });
+  const newUser = new UserSchema({ mail, pass });
+  const isRegistred = await UserSchema.findOne({ mail });
+  console.log(isRegistred);
   if (isRegistred) {
     res.status(400).send();
   } else {

@@ -44,6 +44,7 @@ class Perfil extends Component {
     const { user } = this.props;
     return(
       <div className="perfil_main_cont">
+      {console.log(`cargando el perfil: ${user}`)}
         <PerfilHeader user={user} />
         <PerfilNav user={user} id={user.id} posts={user.posts} />
       </div>

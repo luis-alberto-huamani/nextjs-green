@@ -20,17 +20,14 @@ app.post('*', async (req, res) => {
       imgUrl,
       history,
     };
-    console.log(`inicio el request ${req.body}`);
     if (imgUrl) {
       const cloudImg = await cloudinary.uploader.upload(imgUrl, (err, result) => err ? console.log(err) : result );
       newPost.imgUrl = cloudImg.secure_url;
     }
-    console.log(`Url de la imagen guardada ${newPost.imgUrl}`);
-    await UserSchema.findByIdAndUpdate(id, { $push: { posts: { $each: [newPost], $position: 0 } } }, (err, post) => {
+    UserSchema.findByIdAndUpdate(id, { $push: { posts: { $each: [newPost], $position: 0 } } }, (err, post) => {
       if(err) console.error(err);
       console.log(post);
     });
-    console.log('antes de enviar una respuesta');
     res.status(200).send();
   } catch(err) {
     console.log(err);

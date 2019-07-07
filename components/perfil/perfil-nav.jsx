@@ -84,7 +84,6 @@ class PerfilNav extends Component {
       imgUrl: newPost.imgUrl,
       history: newPost.history,
     }
-    console.log(`antes del fetch ${data}`);
     this.setState({ addModal: true });
     fetch('/api/newPost.js', {
       headers: { "Content-Type": "application/json" },
@@ -93,7 +92,7 @@ class PerfilNav extends Component {
     })
       .then((res) => {
         if (res.status === 200) {
-          this.setState({ history: '', imgUrl: null, posts: [newPost, ...this.state.posts], addModal: false  });
+          this.setState({ history: '', imgUrl: null, addModal: false  });
         }
       })
       .catch(err => console.log(err));
@@ -160,7 +159,6 @@ class PerfilNav extends Component {
             </Row>
             <Row>
               <Col>
-                {console.log(`antes de cargar card ${posts}`)}
                 <CardPost posts={posts}  />
               </Col>
             </Row>

@@ -23648,7 +23648,7 @@ var about_About = function About() {
         Document: _document_default.a,
         buildManifest: build_manifest,
         reactLoadableManifest: react_loadable_manifest,
-        buildId: "dUd2PVc1MLzOU6O7nVwdz",
+        buildId: "y1q4IArBF7o-y9E5dpVWj",
         dynamicBuildId: false,
         assetPrefix: "",
         ampBindInitData: false

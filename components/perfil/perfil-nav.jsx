@@ -84,6 +84,7 @@ class PerfilNav extends Component {
       imgUrl: newPost.imgUrl,
       history: newPost.history,
     }
+    console.log(`antes del fetch ${data}`);
     this.setState({ addModal: true });
     fetch('/api/newPost.js', {
       headers: { "Content-Type": "application/json" },

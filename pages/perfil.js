@@ -17,7 +17,7 @@ const App = ({ user }) => (
 
 App.getInitialProps = async ({ query }) => {
   const { id }  = query;
-  const res = await fetch(`https://nextjs-green.ftandcompany.now.sh/api/perfil?id=${id}`);
+  const res = await fetch(`https://nextjs-green.ftandcompany.now.sh/api/perfil.js?id=${id}`);
   const user = await res.json();
   console.log(user);
   return { user };

@@ -24,7 +24,14 @@ app.post('*', async (req, res) => {
       const cloudImg = await cloudinary.uploader.upload(imgUrl, (err, result) => err ? console.log(err) : result );
       newPost.imgUrl = cloudImg.secure_url;
     }
-    await UserSchema.findByIdAndUpdate(id, { $push: { posts: { $each: [newPost], $position: 0 } } }, (err, post) => {
+    UserSchema.findByIdAndUpdate(id, {
+      $push: {
+        posts: {
+          $each: [newPost],
+          $position: 0 
+        } 
+      } 
+    }, (err, post) => {
       if(err) console.error(err);
       console.log(post);
     });

@@ -12,10 +12,8 @@ cloudinary.config({
 })
 
 app.post('*', async (req, res) => {
-
-  const { id, author, date, imgUrl, history  } = req.body;
-  console.log(req.body);
   try {
+    const { id, author, date, imgUrl, history  } = req.body;
     let newPost = {
       author,
       date,
@@ -23,12 +21,12 @@ app.post('*', async (req, res) => {
       history,
     };
     
-    if (imgUrl !== 'null') {
+    if (imgUrl) {
       const cloudImg = await cloudinary.uploader.upload(imgUrl, (err, result) => err ? console.log(err) : result );
       newPost.imgUrl = cloudImg.secure_url;
     }
     console.log(newPost.imgUrl);
-    UserSchema.findByIdAndUpdate(id, { $push: { posts: { $each: [newPost], $position: 0 } } }, (err, post) => {
+    await UserSchema.findByIdAndUpdate(id, { $push: { posts: { $each: [newPost], $position: 0 } } }, (err, post) => {
       if(err) console.log(err);
       console.log(post);
     });

@@ -7502,124 +7502,6 @@ a.text-dark:hover, a.text-dark:focus {
   .input_date_cont .light span {
     color: #fff; }
 
-.hero_main_cont {
-  position: relative;
-  height: 100vh;
-  background: url("/static/hero-0.jpg") bottom center no-repeat;
-  background-size: cover;
-  overflow: hidden; }
-  .hero_main_cont form {
-    padding: 1rem;
-    height: 100%;
-    width: 100%;
-    position: relative;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-    .hero_main_cont form .inputs_cont {
-      width: 50%; }
-      .hero_main_cont form .inputs_cont .mail_cont_registro {
-        position: relative; }
-        .hero_main_cont form .inputs_cont .mail_cont_registro small {
-          color: red;
-          position: absolute;
-          bottom: -25px;
-          left: 0;
-          width: 100%;
-          text-align: center; }
-    .hero_main_cont form .btn_next {
-      margin: auto;
-      align-self: flex-end;
-      margin-top: 10%;
-      margin-right: 10%;
-      background: transparent;
-      border: none;
-      box-shadow: 11px 0px 20px -3px rgba(37, 37, 37, 0.5);
-      transition: 250ms ease;
-      outline: none; }
-      .hero_main_cont form .btn_next:focus {
-        outline: none;
-        box-shadow: 2px 0px 1px rgba(37, 37, 37, 0.5); }
-        .hero_main_cont form .btn_next:focus svg {
-          fill: #fff; }
-      .hero_main_cont form .btn_next:hover {
-        cursor: pointer;
-        outline: none; }
-        .hero_main_cont form .btn_next:hover svg {
-          fill: #fff; }
-      .hero_main_cont form .btn_next .next {
-        transition: .5s ease;
-        width: 100px;
-        height: 100px;
-        fill: #8bb940; }
-  .hero_main_cont .social_nav_cont {
-    height: 100vh;
-    display: flex;
-    align-items: flex-end; }
-    .hero_main_cont .social_nav_cont .social_nav {
-      display: flex; }
-  .hero_main_cont .msg_cont {
-    display: flex;
-    height: 100vh;
-    color: #fff;
-    flex-direction: column;
-    justify-content: flex-end; }
-  .hero_main_cont .msg_cont-1 {
-    display: flex;
-    align-items: flex-end;
-    color: #fff;
-    position: relative;
-    z-index: 110; }
-    .hero_main_cont .msg_cont-1 h1 {
-      color: transparent !important;
-      -webkit-text-stroke: 2px #fff;
-      text-transform: uppercase;
-      font-size: 72px;
-      margin-bottom: 0; }
-    .hero_main_cont .msg_cont-1 .msg_complementary {
-      margin-bottom: .7rem; }
-      .hero_main_cont .msg_cont-1 .msg_complementary p {
-        font-size: 16px;
-        margin: 0;
-        padding: 0;
-        line-height: 1rem; }
-  .hero_main_cont .msg_cont-2 {
-    display: inline-flex;
-    align-items: flex-end;
-    position: relative;
-    z-index: 110; }
-    .hero_main_cont .msg_cont-2 p {
-      font-size: 36px;
-      margin: 0;
-      padding: 0;
-      margin-left: 1rem; }
-
-.vertical_text {
-  transform: rotate(-90deg);
-  font-size: 11px;
-  transform-origin: right top 0;
-  position: absolute;
-  right: 2vw;
-  top: 15vh;
-  color: #fff;
-  text-transform: capitalize;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  z-index: 110; }
-
-@media (min-width: 1280px) {
-  .hero_main_cont form .btn_next {
-    margin-top: 30%;
-    margin-right: 20%; }
-  .hero_main_cont .msg_cont-1 h1 {
-    font-size: 92px; }
-  .hero_main_cont .msg_cont-1 .msg_complementary p {
-    font-size: 24px;
-    line-height: 1.5rem; }
-  .hero_main_cont .social_nav_cont .social_nav {
-    margin-bottom: 1rem; } }
-
 .frontPic_main_cont {
   background: #8bb940;
   padding: .5rem;
@@ -14744,6 +14626,124 @@ a.text-dark:hover, a.text-dark:focus {
 .step3_main_cont h2 {
   color: #8bb940; }
 
+.hero_main_cont {
+  position: relative;
+  height: 100vh;
+  background: url("/static/hero-0.jpg") bottom center no-repeat;
+  background-size: cover;
+  overflow: hidden; }
+  .hero_main_cont form {
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .hero_main_cont form .inputs_cont {
+      width: 50%; }
+      .hero_main_cont form .inputs_cont .mail_cont_registro {
+        position: relative; }
+        .hero_main_cont form .inputs_cont .mail_cont_registro small {
+          color: red;
+          position: absolute;
+          bottom: -25px;
+          left: 0;
+          width: 100%;
+          text-align: center; }
+    .hero_main_cont form .btn_next {
+      margin: auto;
+      align-self: flex-end;
+      margin-top: 10%;
+      margin-right: 10%;
+      background: transparent;
+      border: none;
+      box-shadow: 11px 0px 20px -3px rgba(37, 37, 37, 0.5);
+      transition: 250ms ease;
+      outline: none; }
+      .hero_main_cont form .btn_next:focus {
+        outline: none;
+        box-shadow: 2px 0px 1px rgba(37, 37, 37, 0.5); }
+        .hero_main_cont form .btn_next:focus svg {
+          fill: #fff; }
+      .hero_main_cont form .btn_next:hover {
+        cursor: pointer;
+        outline: none; }
+        .hero_main_cont form .btn_next:hover svg {
+          fill: #fff; }
+      .hero_main_cont form .btn_next .next {
+        transition: .5s ease;
+        width: 100px;
+        height: 100px;
+        fill: #8bb940; }
+  .hero_main_cont .social_nav_cont {
+    height: 100vh;
+    display: flex;
+    align-items: flex-end; }
+    .hero_main_cont .social_nav_cont .social_nav {
+      display: flex; }
+  .hero_main_cont .msg_cont {
+    display: flex;
+    height: 100vh;
+    color: #fff;
+    flex-direction: column;
+    justify-content: flex-end; }
+  .hero_main_cont .msg_cont-1 {
+    display: flex;
+    align-items: flex-end;
+    color: #fff;
+    position: relative;
+    z-index: 110; }
+    .hero_main_cont .msg_cont-1 h1 {
+      color: transparent !important;
+      -webkit-text-stroke: 2px #fff;
+      text-transform: uppercase;
+      font-size: 72px;
+      margin-bottom: 0; }
+    .hero_main_cont .msg_cont-1 .msg_complementary {
+      margin-bottom: .7rem; }
+      .hero_main_cont .msg_cont-1 .msg_complementary p {
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        line-height: 1rem; }
+  .hero_main_cont .msg_cont-2 {
+    display: inline-flex;
+    align-items: flex-end;
+    position: relative;
+    z-index: 110; }
+    .hero_main_cont .msg_cont-2 p {
+      font-size: 36px;
+      margin: 0;
+      padding: 0;
+      margin-left: 1rem; }
+
+.vertical_text {
+  transform: rotate(-90deg);
+  font-size: 11px;
+  transform-origin: right top 0;
+  position: absolute;
+  right: 2vw;
+  top: 15vh;
+  color: #fff;
+  text-transform: capitalize;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  z-index: 110; }
+
+@media (min-width: 1280px) {
+  .hero_main_cont form .btn_next {
+    margin-top: 30%;
+    margin-right: 20%; }
+  .hero_main_cont .msg_cont-1 h1 {
+    font-size: 92px; }
+  .hero_main_cont .msg_cont-1 .msg_complementary p {
+    font-size: 24px;
+    line-height: 1.5rem; }
+  .hero_main_cont .social_nav_cont .social_nav {
+    margin-bottom: 1rem; } }
+
 .lds-ring {
   display: inline-block;
   position: relative;
@@ -14776,6 +14776,21 @@ a.text-dark:hover, a.text-dark:focus {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+
+.greetings_main_cont {
+  color: #8bb940;
+  text-align: center; }
+  .greetings_main_cont .svg_cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0; }
+    .greetings_main_cont .svg_cont span {
+      font-size: 72px; }
+    .greetings_main_cont .svg_cont svg {
+      fill: #8bb940;
+      width: 100px;
+      height: 100px; }
 
 .about_main_cont {
   height: 100vh;
@@ -14826,21 +14841,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-size: cover;
   width: 70%;
   height: 100vh; }
-
-.greetings_main_cont {
-  color: #8bb940;
-  text-align: center; }
-  .greetings_main_cont .svg_cont {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5% 0; }
-    .greetings_main_cont .svg_cont span {
-      font-size: 72px; }
-    .greetings_main_cont .svg_cont svg {
-      fill: #8bb940;
-      width: 100px;
-      height: 100px; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/

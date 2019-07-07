@@ -34,6 +34,7 @@ class PerfilNav extends Component {
   }
 
   componentWillMount() {
+    console.log(this.props.is);
     const { posts } = this.props;
     this.setState({ posts: posts });
   }

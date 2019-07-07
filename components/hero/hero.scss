@@ -38,17 +38,29 @@
       margin-right: 10%;
       background: transparent;
       border: none;
+      box-shadow: 11px 0px 20px -3px rgba(37, 37, 37, .5);
+      transition: 250ms ease;
+      outline: none;
+      &:focus{
+        outline: none;
+        box-shadow: 2px 0px 1px   rgba(37, 37, 37, .5);
+        svg{
+          fill: #fff;
+        }
+      }
       &:hover{
         cursor: pointer;
+        outline: none;
         svg{
-          fill: $danger;
+          fill: #fff;
         }
+
       }
       .next{
         transition: .5s ease;
         width: 100px;
         height: 100px;
-        fill: #fff;
+        fill: $prim;
       } 
     }
   }

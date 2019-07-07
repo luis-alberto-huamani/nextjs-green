@@ -231,7 +231,7 @@ class BodyPost extends Component{
                     <Button onClick={this.onSubmit} color="dark" size="md">Confirmar</Button>
                   </>
                 )
-                :<Button onClick={this.onNext} color="dark" size="md">Siguiente</Button>
+                :<Button onClick={this.onNext} color="light" size="md">Siguiente</Button>
               }
             </div>
             )

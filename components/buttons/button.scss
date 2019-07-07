@@ -71,11 +71,10 @@ button{
 }
 .dark{
   border-color: $prim;
-  color: $prim;
+  color: #fff;
   border: 1px solid $prim;
   &:hover{
-    background: $prim;
-    color: #fff;
+    background: $sec;
     cursor: pointer;
   }
   &:active{

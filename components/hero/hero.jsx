@@ -28,7 +28,7 @@ class Hero extends Component{
     this.handleChange = this.handleChange.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-  }s
+  }
 
   onRegister() {
     const { register } = this.state;
@@ -125,7 +125,7 @@ class Hero extends Component{
                   onFocus={this.handleFocus}
                 />
               </div>
-              <button type="submit" className="btn_next shadow">{arrowCircle}</button>
+              <button title="Registrar" type="submit" className="btn_next">{arrowCircle}</button>
             </form>
             )
           }
@@ -148,7 +148,7 @@ class Hero extends Component{
             <div className="col-7">
               <div className="msg_cont">
                 <div className="msg_cont-2 animated fadeIn delay-5s">
-                  <Button onClick={this.onRegister} size="lg" color="light">Unete</Button>
+                  <Button title="Registro" onClick={this.onRegister} size="lg" color="light">Unete</Button>
                   <p>A Greenlink</p>
                 </div>
                 <div className="msg_cont-1">

@@ -1,29 +1,42 @@
 const app = require('./util/app');
 const mongooseConnect = require('./util/mongoose');
 const UserSchema = require('../models/user');
+const cloudinary = require('cloudinary').v2;
 
 [...mongooseConnect];
 
-app.post('*', async (req, res) => {
-  const reqId = req.body.id;
-  const reqAuthor = req.body.author;
-  const reqDate = req.body.date;
-  const reqImg = req.body.imgUrl;
-  const reqhistory = req.body.history;
-  const newPost = {
-    author: reqAuthor,
-    date: reqDate,
-    imgUrl:  reqImg,
-    history: reqhistory,
-  };
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+})
 
-  const resp = await UserSchema.findByIdAndUpdate(reqId, { $push: { posts: newPost } });
-  if (resp) {
-    res.status(200).send("todo bien");
-  } else {
-    res.status(501).send("todo mal");
+app.post('*', async (req, res) => {
+
+  const { id, author, date, imgUrl, history  } = req.body;
+  console.log(req.body);
+  try {
+    let newPost = {
+      author,
+      date,
+      imgUrl,
+      history,
+    };
+    
+    if (imgUrl !== 'null') {
+      const cloudImg = await cloudinary.uploader.upload(imgUrl, (err, result) => err ? console.log(err) : result );
+      newPost.imgUrl = cloudImg.secure_url;
+    }
+    console.log(newPost.imgUrl);
+    UserSchema.findByIdAndUpdate(id, { $push: { posts: { $each: [newPost], $position: 0 } } }, (err, post) => {
+      if(err) console.log(err);
+      console.log(post);
+    });
+    res.status(200).send();
+  } catch(err) {
+    console.log(err);
+    res.status(501).json(`error en el servidor: ${err}`);
   }
 });
 
 module.exports = app;
-

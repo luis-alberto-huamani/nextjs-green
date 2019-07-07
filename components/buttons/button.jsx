@@ -1,10 +1,11 @@
 import './button.scss';
 import classnames from 'classnames';
 
-const Button = ({ id, color, size, onClick, type, children }) => (
-  <div className="my_button shadow">
+const Button = ({ id, color, size, onClick, type, children, title }) => (
+  <div className="my_button">
     <button
       id={id}
+      title={title}
       color={color}  
       onClick={onClick}
       type={type}

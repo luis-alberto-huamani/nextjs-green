@@ -85,7 +85,7 @@ class PerfilNav extends Component {
       history: newPost.history,
     }
     this.setState({ addModal: true });
-    fetch('/api/newPost', {
+    fetch('/api/newPost.js', {
       headers: { "Content-Type": "application/json" },
       method: "POST",
       body: JSON.stringify(data),

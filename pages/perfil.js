@@ -9,7 +9,6 @@ const App = ({ user }) => (
     <Head>
     </Head>
     <Layout>
-      {console.log(user)}
       <Perfil user={user} />
     </Layout>
   </div>
@@ -24,18 +23,3 @@ App.getInitialProps = async ({ query }) => {
 };
 
 export default App;
-
-
-/*App.getInitialProps = async ({ query }) => {
-  const id = query.id;
-  const data = {
-    reqid: id,
-  }
-  const res = await fetch("http://localhost:3000/api/perfil",{
-    headers: { "Content-Type": "application/json" },
-    method: "POST",
-    body: JSON.stringify(data),
-  });
-  const user = await res.json();
-  return { user, id };
-};*/

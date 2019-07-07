@@ -7,7 +7,7 @@ import PerfilHeader from './perfil-header';
 import PerfilNav from './perfil-nav';
 
 
-class Login extends Component {
+class Perfil extends Component {
   constructor(props) {
     super(props);
     /*this.state= {
@@ -41,11 +41,11 @@ class Login extends Component {
   }
 
   render() {
-    const { user, id } = this.props;
+    const { user } = this.props;
     return(
       <div className="perfil_main_cont">
         <PerfilHeader user={user} />
-        <PerfilNav user={user} id={id} posts={user.posts} />
+        <PerfilNav user={user} id={user.id} posts={user.posts} />
       </div>
     );
   }
@@ -54,4 +54,4 @@ class Login extends Component {
 const mapStateToProps = state => ({ login: state.login });
 const mapDispatchToProps = dispatch => bindActionCreators({ onLogin }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Perfil);

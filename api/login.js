@@ -2,8 +2,8 @@ const app = require('./util/app');
 const mongooseConnect = require('./util/mongoose');
 const UserSchema = require('../models/user');
 
-[...mongooseConnect];
 
+[...mongooseConnect];
 
 app.post('*', async (req, res) => {
   const user = req.body;

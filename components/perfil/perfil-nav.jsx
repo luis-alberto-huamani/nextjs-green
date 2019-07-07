@@ -34,7 +34,6 @@ class PerfilNav extends Component {
   }
 
   componentWillMount() {
-    console.log(this.props.is);
     const { posts } = this.props;
     this.setState({ posts: posts });
   }
@@ -79,7 +78,7 @@ class PerfilNav extends Component {
       history,
     };
     const data = {
-      id: id,
+      id,
       author: newPost.author,
       date: newPost.date,
       imgUrl: newPost.imgUrl,
@@ -93,7 +92,7 @@ class PerfilNav extends Component {
     })
       .then((res) => {
         if (res.status === 200) {
-          this.setState({ history: '', imgUrl: null, addModal: false  });
+          this.setState({ history: '', imgUrl: null, posts: [newPost, ...this.state.posts], addModal: false  });
         }
       })
       .catch(err => console.log(err));

@@ -91,7 +91,7 @@ class PerfilNav extends Component {
       body: JSON.stringify(data),
     })
       .then((res) => {
-        if (res.ok) {
+        if (res.status === 200) {
           this.setState({ history: '', imgUrl: null, posts: [newPost, ...this.state.posts], addModal: false  });
         }
       })

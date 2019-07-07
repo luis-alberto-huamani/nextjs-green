@@ -45,10 +45,10 @@ class Perfil extends Component {
     return(
       <div className="perfil_main_cont">
       {console.log(`cargando el perfil: ${user}`)}
-      {console.log(`cargando el perfil id: ${user.id}`)}
+      {console.log(`cargando el perfil id: ${user._id}`)}
       {console.log(`cargando el perfil posts: ${user.posts}`)}
         <PerfilHeader user={user} />
-        <PerfilNav user={user} id={user.id} posts={user.posts} />
+        <PerfilNav user={user} id={user._id} posts={user.posts} />
       </div>
     );
   }

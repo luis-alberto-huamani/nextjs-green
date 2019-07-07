@@ -38,8 +38,8 @@ app.post('*', async (req, res) => {
       birthday,
       history,
       interest,
-      perfilImg: cloudPerfilImg.url,
-      frontPageImg: cloudFrontImg.url,
+      perfilImg: cloudPerfilImg.secure_url,
+      frontPageImg: cloudFrontImg.secure_url,
       frontPageQuote,
     });
     if (perfilUpdated) {

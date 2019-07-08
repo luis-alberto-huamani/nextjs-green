@@ -49,6 +49,28 @@
   box-shadow: 5px 5px 15px #000;
   border: 3px solid #fff;
   //overflow: hidden;
+  button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: .2rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    &:focus{
+      outline: none;
+    }
+    svg{
+      width: 30px;
+      height: 30px;
+      fill: $prim;
+    }
+    &:hover{
+      svg{
+        fill: $danger;
+      }
+    }
+  }
 }
 .user_img{
   width: 100%;

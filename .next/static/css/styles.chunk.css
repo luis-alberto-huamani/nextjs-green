@@ -21305,6 +21305,22 @@ a.text-dark:hover, a.text-dark:focus {
   top: 5%;
   box-shadow: 5px 5px 15px #000;
   border: 3px solid #fff; }
+  .perfil_user_cont button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: .2rem;
+    background: transparent;
+    border: none;
+    outline: none; }
+    .perfil_user_cont button:focus {
+      outline: none; }
+    .perfil_user_cont button svg {
+      width: 30px;
+      height: 30px;
+      fill: #8bb940; }
+    .perfil_user_cont button:hover svg {
+      fill: #ff6c1a; }
 
 .user_img {
   width: 100%; }

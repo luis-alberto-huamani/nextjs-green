@@ -32285,7 +32285,7 @@ var validateEmpty = function validateEmpty(value) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!***********************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fmedia%2Ffelix%2Fprojects%2Fgreen%2Fpages%2Findex.js ***!
   \***********************************************************************************************************************/
@@ -32308,5 +32308,5 @@ module.exports = dll_6dc2816e14fab51b8269;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js","styles"]]]);
+},[[0,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

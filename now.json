@@ -10,7 +10,6 @@
   },
   "builds": [
     { "src": "api/*.js", "use": "@now/node" },
-    { "src": "package.json", "use": "@now/next" },
-    { "src": "server/*.js", "use": "@now/node-server" }
+    { "src": "package.json", "use": "@now/next" }
   ]
 }

@@ -1,88 +1,29 @@
 import React, { Component } from 'react';
-import Layout from '../components/layout/layout';
-import Button from '../components/buttons/button';
-import Input from '../components/form/input';
-import InputDate from '../components/form/date';
-import HeaderPost from '../components/postregistro/header';
-import Header from '../components/header/header';
+import socketIoClient from 'socket.io-client';
 
 class Foo extends Component{
   constructor(props){
-    super(props);
-    this.state = {
-      url: '',
-      name: '',
-      img: null,
-    };
-    this.onChange = this.onChange.bind(this);
-    this.onFile = this.onFile.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+  super(props);
+  this.state = {
+    api: '',
+    endpoint: 'http://localhost:4001',
   }
+}
 
-  onChange(e) {
-    this.setState({ name: e.target.value });
-  }
-
-  onFile(e) {
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      this.setState({ img: reader.result });
-    }
-    if(e.target.files[0]){
-      reader.readAsDataURL(e.target.files[0]);
-    }
-  }
-
-  onSubmit(e) {
-    e.preventDefault();
-    const { img, name } = this.state;
-    const data = {
-      img,
-      name,
-    };
-    const options={
-      headers: { "Content-Type" : "application/json" },
-      method: 'POST',
-      body: JSON.stringify(data),
-    };
-
-    fetch('/api/foo.js', options)
-      .then(res => res.text()).then(res => {
-        this.setState({ url: res })
-      });
-
-    /*const data = new FormData();
-    data.append('avatar', img);
-    data.append('name', name);
-    const options={
-      method: 'POST',
-      body: data,
-    }
-    console.log(data);
-    fetch('http://localhost:4000/api/foo', options).then(res => res.json()).then(res => {
-      this.setState({ url: res.img.path })
-    });*/
+  componentDidMount() {
+    const { endpoint } = this.state;
+    const socket = socketIoClient(endpoint);
+    socket.on('fromApi', data => this.setState({ api: data }));
   }
 
   render() {
     return(
-      <section className="postregistro_main_cont">
-      <img src={this.state.url} />
-        <form onSubmit={this.onSubmit}
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems:'center',
-          }}
-        >
-          <input value={this.state.name} onChange={this.onChange} type="text" />
-          <input name="avatar" onChange={this.onFile} type="file" />
-          <button type="submit">Enviar</button>
-        </form>
+      <section>
+        <h1>Hola mundo</h1>
+        <p>{this.state.api}</p>
       </section>
     );
   }
-};
+}
 
 export default Foo;

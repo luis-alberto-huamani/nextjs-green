@@ -2349,7 +2349,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("button", {
         title: "Obsequiar",
         onClick: this.handleGift,
-        id: "gift",
+        id: "gift_button",
         className: "btn_social animated ".concat(className),
         __source: {
           fileName: _jsxFileName,
@@ -2373,7 +2373,7 @@ function (_Component) {
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_7__["Popover"], {
         isOpen: popGift,
-        target: "gift",
+        target: "gift_button",
         placement: "bottom",
         __source: {
           fileName: _jsxFileName,
@@ -2517,7 +2517,7 @@ function (_Component) {
         xmlns: "http://www.w3.org/2000/svg",
         viewBox: "0 0 512 512",
         style: myLike ? {
-          fill: "#8bb940"
+          fill: "#ff6c1a"
         } : null,
         __source: {
           fileName: _jsxFileName,
@@ -2533,7 +2533,7 @@ function (_Component) {
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
         style: myLike ? {
-          color: "#8bb940"
+          color: "#ff6c1a"
         } : null,
         __source: {
           fileName: _jsxFileName,
@@ -2629,7 +2629,7 @@ function (_Component) {
         xmlns: "http://www.w3.org/2000/svg",
         viewBox: "0 0 512 512",
         style: myShare ? {
-          fill: "#8bb940"
+          fill: "#ff6c1a"
         } : null,
         __source: {
           fileName: _jsxFileName,
@@ -2645,7 +2645,7 @@ function (_Component) {
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
         style: myShare ? {
-          color: "#8bb940"
+          color: "#ff6c1a"
         } : null,
         __source: {
           fileName: _jsxFileName,
@@ -32285,7 +32285,7 @@ var validateEmpty = function validateEmpty(value) {
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /*!***********************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fmedia%2Ffelix%2Fprojects%2Fgreen%2Fpages%2Findex.js ***!
   \***********************************************************************************************************************/
@@ -32308,5 +32308,5 @@ module.exports = dll_6dc2816e14fab51b8269;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js","styles"]]]);
+},[[1,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

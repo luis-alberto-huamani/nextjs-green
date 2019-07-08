@@ -2561,7 +2561,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("button", {
         title: "Obsequiar",
         onClick: this.handleGift,
-        id: "gift",
+        id: "gift_button",
         className: "btn_social animated ".concat(className),
         __source: {
           fileName: _jsxFileName,
@@ -2585,7 +2585,7 @@ function (_Component) {
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_7__["Popover"], {
         isOpen: popGift,
-        target: "gift",
+        target: "gift_button",
         placement: "bottom",
         __source: {
           fileName: _jsxFileName,
@@ -2729,7 +2729,7 @@ function (_Component) {
         xmlns: "http://www.w3.org/2000/svg",
         viewBox: "0 0 512 512",
         style: myLike ? {
-          fill: "#8bb940"
+          fill: "#ff6c1a"
         } : null,
         __source: {
           fileName: _jsxFileName,
@@ -2745,7 +2745,7 @@ function (_Component) {
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
         style: myLike ? {
-          color: "#8bb940"
+          color: "#ff6c1a"
         } : null,
         __source: {
           fileName: _jsxFileName,
@@ -2841,7 +2841,7 @@ function (_Component) {
         xmlns: "http://www.w3.org/2000/svg",
         viewBox: "0 0 512 512",
         style: myShare ? {
-          fill: "#8bb940"
+          fill: "#ff6c1a"
         } : null,
         __source: {
           fileName: _jsxFileName,
@@ -2857,7 +2857,7 @@ function (_Component) {
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
         style: myShare ? {
-          color: "#8bb940"
+          color: "#ff6c1a"
         } : null,
         __source: {
           fileName: _jsxFileName,

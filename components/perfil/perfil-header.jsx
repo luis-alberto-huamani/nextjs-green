@@ -1,7 +1,7 @@
 import './perfil-header.scss';
 
 const PerfilHeader = ({ user }) => (
-  <header className="header_perfil_cont shadow-lg shadow" style={{ background:`url(${user.frontPageImg})center center no-repeat`, backgroundSize: 'cover' }}>
+  <header className="header_perfil_cont" style={{ background:`url(${user.frontPageImg})center center no-repeat`, backgroundSize: 'cover' }}>
   <div className="greeting">
     <h1>hola, me llamo {user.name}</h1>
     <div className="quote">

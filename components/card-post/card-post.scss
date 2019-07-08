@@ -59,12 +59,15 @@
     padding: .8rem;
     text-align: justify;
   }
-  .footer{
+  .card_footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: $prim;
     padding: .8rem;
+    .social_buttons{
+      display: flex;
+    }
     button{
       background: transparent;
       padding: 0;

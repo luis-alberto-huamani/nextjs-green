@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import uuid from 'uuid/v1';
 import fetch from 'isomorphic-unfetch';
 import CardPost from '../card-post/card-post';
+import { connect } from 'react-redux';
+import Store from '../store/store';
 import {
   TabContent,
   TabPane,
@@ -106,8 +107,12 @@ class PerfilNav extends Component {
       posts,
       addModal,
     } = this.state;
+    const { store } = this.props;
     return (
       <div>
+        {
+          store && <Store />
+        }
         <Nav tabs>
           <NavItem>
             <NavLink
@@ -190,4 +195,7 @@ class PerfilNav extends Component {
   }
 };
 
-export default PerfilNav;
+const mapStateToProps = state => ({ store: state.store });
+
+export default connect(mapStateToProps)(PerfilNav);
+

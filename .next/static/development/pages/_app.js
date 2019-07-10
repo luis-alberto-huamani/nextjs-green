@@ -138,17 +138,6 @@ function getOrCreateStore(initialState) {
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/array/from.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/array/from */ "./node_modules/core-js/library/fn/array/from.js");
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js ***!
@@ -168,17 +157,6 @@ module.exports = __webpack_require__(/*! core-js/library/fn/array/is-array */ ".
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/get-iterator */ "./node_modules/core-js/library/fn/get-iterator.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/is-iterable.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/is-iterable.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/is-iterable */ "./node_modules/core-js/library/fn/is-iterable.js");
 
 /***/ }),
 
@@ -455,31 +433,6 @@ function _arrayWithHoles(arr) {
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithoutHoles.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithoutHoles.js ***!
-  \******************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayWithoutHoles; });
-/* harmony import */ var _core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/array/is-array */ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js");
-/* harmony import */ var _core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__);
-
-function _arrayWithoutHoles(arr) {
-  if (_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default()(arr)) {
-    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
-      arr2[i] = arr[i];
-    }
-
-    return arr2;
-  }
-}
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js":
 /*!**********************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js ***!
@@ -723,28 +676,6 @@ function _inherits(subClass, superClass) {
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArray.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArray.js ***!
-  \****************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _iterableToArray; });
-/* harmony import */ var _core_js_array_from__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/array/from */ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js");
-/* harmony import */ var _core_js_array_from__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_array_from__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _core_js_is_iterable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core-js/is-iterable */ "./node_modules/@babel/runtime-corejs2/core-js/is-iterable.js");
-/* harmony import */ var _core_js_is_iterable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_core_js_is_iterable__WEBPACK_IMPORTED_MODULE_1__);
-
-
-function _iterableToArray(iter) {
-  if (_core_js_is_iterable__WEBPACK_IMPORTED_MODULE_1___default()(Object(iter)) || Object.prototype.toString.call(iter) === "[object Arguments]") return _core_js_array_from__WEBPACK_IMPORTED_MODULE_0___default()(iter);
-}
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArrayLimit.js":
 /*!*********************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArrayLimit.js ***!
@@ -798,22 +729,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableRest; });
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance");
-}
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableSpread.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableSpread.js ***!
-  \******************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableSpread; });
-function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance");
 }
 
 /***/ }),
@@ -927,28 +842,6 @@ __webpack_require__.r(__webpack_exports__);
 
 function _slicedToArray(arr, i) {
   return Object(_arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__["default"])(arr, i) || Object(_nonIterableRest__WEBPACK_IMPORTED_MODULE_2__["default"])();
-}
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js ***!
-  \******************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _toConsumableArray; });
-/* harmony import */ var _arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithoutHoles.js");
-/* harmony import */ var _iterableToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArray.js");
-/* harmony import */ var _nonIterableSpread__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableSpread.js");
-
-
-
-function _toConsumableArray(arr) {
-  return Object(_arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(arr) || Object(_nonIterableSpread__WEBPACK_IMPORTED_MODULE_2__["default"])();
 }
 
 /***/ }),
@@ -1145,20 +1038,6 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 /***/ }),
 
-/***/ "./node_modules/core-js/library/fn/array/from.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/core-js/library/fn/array/from.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es6.string.iterator */ "./node_modules/core-js/library/modules/es6.string.iterator.js");
-__webpack_require__(/*! ../../modules/es6.array.from */ "./node_modules/core-js/library/modules/es6.array.from.js");
-module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Array.from;
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/library/fn/array/is-array.js":
 /*!***********************************************************!*\
   !*** ./node_modules/core-js/library/fn/array/is-array.js ***!
@@ -1182,20 +1061,6 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/
 __webpack_require__(/*! ../modules/web.dom.iterable */ "./node_modules/core-js/library/modules/web.dom.iterable.js");
 __webpack_require__(/*! ../modules/es6.string.iterator */ "./node_modules/core-js/library/modules/es6.string.iterator.js");
 module.exports = __webpack_require__(/*! ../modules/core.get-iterator */ "./node_modules/core-js/library/modules/core.get-iterator.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/fn/is-iterable.js":
-/*!********************************************************!*\
-  !*** ./node_modules/core-js/library/fn/is-iterable.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../modules/web.dom.iterable */ "./node_modules/core-js/library/modules/web.dom.iterable.js");
-__webpack_require__(/*! ../modules/es6.string.iterator */ "./node_modules/core-js/library/modules/es6.string.iterator.js");
-module.exports = __webpack_require__(/*! ../modules/core.is-iterable */ "./node_modules/core-js/library/modules/core.is-iterable.js");
 
 
 /***/ }),
@@ -1946,26 +1811,6 @@ module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
 
 var core = module.exports = { version: '2.6.9' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_create-property.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_create-property.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var $defineProperty = __webpack_require__(/*! ./_object-dp */ "./node_modules/core-js/library/modules/_object-dp.js");
-var createDesc = __webpack_require__(/*! ./_property-desc */ "./node_modules/core-js/library/modules/_property-desc.js");
-
-module.exports = function (object, index, value) {
-  if (index in object) $defineProperty.f(object, index, createDesc(0, value));
-  else object[index] = value;
-};
 
 
 /***/ }),
@@ -3764,76 +3609,6 @@ module.exports = __webpack_require__(/*! ./_core */ "./node_modules/core-js/libr
   if (typeof iterFn != 'function') throw TypeError(it + ' is not iterable!');
   return anObject(iterFn.call(it));
 };
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/core.is-iterable.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/core.is-iterable.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var classof = __webpack_require__(/*! ./_classof */ "./node_modules/core-js/library/modules/_classof.js");
-var ITERATOR = __webpack_require__(/*! ./_wks */ "./node_modules/core-js/library/modules/_wks.js")('iterator');
-var Iterators = __webpack_require__(/*! ./_iterators */ "./node_modules/core-js/library/modules/_iterators.js");
-module.exports = __webpack_require__(/*! ./_core */ "./node_modules/core-js/library/modules/_core.js").isIterable = function (it) {
-  var O = Object(it);
-  return O[ITERATOR] !== undefined
-    || '@@iterator' in O
-    // eslint-disable-next-line no-prototype-builtins
-    || Iterators.hasOwnProperty(classof(O));
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/es6.array.from.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/es6.array.from.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var ctx = __webpack_require__(/*! ./_ctx */ "./node_modules/core-js/library/modules/_ctx.js");
-var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
-var toObject = __webpack_require__(/*! ./_to-object */ "./node_modules/core-js/library/modules/_to-object.js");
-var call = __webpack_require__(/*! ./_iter-call */ "./node_modules/core-js/library/modules/_iter-call.js");
-var isArrayIter = __webpack_require__(/*! ./_is-array-iter */ "./node_modules/core-js/library/modules/_is-array-iter.js");
-var toLength = __webpack_require__(/*! ./_to-length */ "./node_modules/core-js/library/modules/_to-length.js");
-var createProperty = __webpack_require__(/*! ./_create-property */ "./node_modules/core-js/library/modules/_create-property.js");
-var getIterFn = __webpack_require__(/*! ./core.get-iterator-method */ "./node_modules/core-js/library/modules/core.get-iterator-method.js");
-
-$export($export.S + $export.F * !__webpack_require__(/*! ./_iter-detect */ "./node_modules/core-js/library/modules/_iter-detect.js")(function (iter) { Array.from(iter); }), 'Array', {
-  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
-  from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
-    var O = toObject(arrayLike);
-    var C = typeof this == 'function' ? this : Array;
-    var aLen = arguments.length;
-    var mapfn = aLen > 1 ? arguments[1] : undefined;
-    var mapping = mapfn !== undefined;
-    var index = 0;
-    var iterFn = getIterFn(O);
-    var length, result, step, iterator;
-    if (mapping) mapfn = ctx(mapfn, aLen > 2 ? arguments[2] : undefined, 2);
-    // if object isn't iterable or it's array with default iterator - use simple case
-    if (iterFn != undefined && !(C == Array && isArrayIter(iterFn))) {
-      for (iterator = iterFn.call(O), result = new C(); !(step = iterator.next()).done; index++) {
-        createProperty(result, index, mapping ? call(iterator, mapfn, [step.value, index], true) : step.value);
-      }
-    } else {
-      length = toLength(O.length);
-      for (result = new C(length); length > index; index++) {
-        createProperty(result, index, mapping ? mapfn(O[index], index) : O[index]);
-      }
-    }
-    result.length = index;
-    return result;
-  }
-});
 
 
 /***/ }),
@@ -12894,6 +12669,206 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/uuid/lib/bytesToUuid.js":
+/*!**********************************************!*\
+  !*** ./node_modules/uuid/lib/bytesToUuid.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Convert array of 16 byte values to UUID string format of the form:
+ * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ */
+var byteToHex = [];
+for (var i = 0; i < 256; ++i) {
+  byteToHex[i] = (i + 0x100).toString(16).substr(1);
+}
+
+function bytesToUuid(buf, offset) {
+  var i = offset || 0;
+  var bth = byteToHex;
+  // join used to fix memory issue caused by concatenation: https://bugs.chromium.org/p/v8/issues/detail?id=3175#c4
+  return ([bth[buf[i++]], bth[buf[i++]], 
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]],
+	bth[buf[i++]], bth[buf[i++]],
+	bth[buf[i++]], bth[buf[i++]]]).join('');
+}
+
+module.exports = bytesToUuid;
+
+
+/***/ }),
+
+/***/ "./node_modules/uuid/lib/rng-browser.js":
+/*!**********************************************!*\
+  !*** ./node_modules/uuid/lib/rng-browser.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// Unique ID creation requires a high quality random # generator.  In the
+// browser this is a little complicated due to unknown quality of Math.random()
+// and inconsistent support for the `crypto` API.  We do the best we can via
+// feature-detection
+
+// getRandomValues needs to be invoked in a context where "this" is a Crypto
+// implementation. Also, find the complete implementation of crypto on IE11.
+var getRandomValues = (typeof(crypto) != 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto)) ||
+                      (typeof(msCrypto) != 'undefined' && typeof window.msCrypto.getRandomValues == 'function' && msCrypto.getRandomValues.bind(msCrypto));
+
+if (getRandomValues) {
+  // WHATWG crypto RNG - http://wiki.whatwg.org/wiki/Crypto
+  var rnds8 = new Uint8Array(16); // eslint-disable-line no-undef
+
+  module.exports = function whatwgRNG() {
+    getRandomValues(rnds8);
+    return rnds8;
+  };
+} else {
+  // Math.random()-based (RNG)
+  //
+  // If all else fails, use Math.random().  It's fast, but is of unspecified
+  // quality.
+  var rnds = new Array(16);
+
+  module.exports = function mathRNG() {
+    for (var i = 0, r; i < 16; i++) {
+      if ((i & 0x03) === 0) r = Math.random() * 0x100000000;
+      rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
+    }
+
+    return rnds;
+  };
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/uuid/v1.js":
+/*!*********************************!*\
+  !*** ./node_modules/uuid/v1.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var rng = __webpack_require__(/*! ./lib/rng */ "./node_modules/uuid/lib/rng-browser.js");
+var bytesToUuid = __webpack_require__(/*! ./lib/bytesToUuid */ "./node_modules/uuid/lib/bytesToUuid.js");
+
+// **`v1()` - Generate time-based UUID**
+//
+// Inspired by https://github.com/LiosK/UUID.js
+// and http://docs.python.org/library/uuid.html
+
+var _nodeId;
+var _clockseq;
+
+// Previous uuid creation time
+var _lastMSecs = 0;
+var _lastNSecs = 0;
+
+// See https://github.com/broofa/node-uuid for API details
+function v1(options, buf, offset) {
+  var i = buf && offset || 0;
+  var b = buf || [];
+
+  options = options || {};
+  var node = options.node || _nodeId;
+  var clockseq = options.clockseq !== undefined ? options.clockseq : _clockseq;
+
+  // node and clockseq need to be initialized to random values if they're not
+  // specified.  We do this lazily to minimize issues related to insufficient
+  // system entropy.  See #189
+  if (node == null || clockseq == null) {
+    var seedBytes = rng();
+    if (node == null) {
+      // Per 4.5, create and 48-bit node id, (47 random bits + multicast bit = 1)
+      node = _nodeId = [
+        seedBytes[0] | 0x01,
+        seedBytes[1], seedBytes[2], seedBytes[3], seedBytes[4], seedBytes[5]
+      ];
+    }
+    if (clockseq == null) {
+      // Per 4.2.2, randomize (14 bit) clockseq
+      clockseq = _clockseq = (seedBytes[6] << 8 | seedBytes[7]) & 0x3fff;
+    }
+  }
+
+  // UUID timestamps are 100 nano-second units since the Gregorian epoch,
+  // (1582-10-15 00:00).  JSNumbers aren't precise enough for this, so
+  // time is handled internally as 'msecs' (integer milliseconds) and 'nsecs'
+  // (100-nanoseconds offset from msecs) since unix epoch, 1970-01-01 00:00.
+  var msecs = options.msecs !== undefined ? options.msecs : new Date().getTime();
+
+  // Per 4.2.1.2, use count of uuid's generated during the current clock
+  // cycle to simulate higher resolution clock
+  var nsecs = options.nsecs !== undefined ? options.nsecs : _lastNSecs + 1;
+
+  // Time since last uuid creation (in msecs)
+  var dt = (msecs - _lastMSecs) + (nsecs - _lastNSecs)/10000;
+
+  // Per 4.2.1.2, Bump clockseq on clock regression
+  if (dt < 0 && options.clockseq === undefined) {
+    clockseq = clockseq + 1 & 0x3fff;
+  }
+
+  // Reset nsecs if clock regresses (new clockseq) or we've moved onto a new
+  // time interval
+  if ((dt < 0 || msecs > _lastMSecs) && options.nsecs === undefined) {
+    nsecs = 0;
+  }
+
+  // Per 4.2.1.2 Throw error if too many uuids are requested
+  if (nsecs >= 10000) {
+    throw new Error('uuid.v1(): Can\'t create more than 10M uuids/sec');
+  }
+
+  _lastMSecs = msecs;
+  _lastNSecs = nsecs;
+  _clockseq = clockseq;
+
+  // Per 4.1.4 - Convert from unix epoch to Gregorian epoch
+  msecs += 12219292800000;
+
+  // `time_low`
+  var tl = ((msecs & 0xfffffff) * 10000 + nsecs) % 0x100000000;
+  b[i++] = tl >>> 24 & 0xff;
+  b[i++] = tl >>> 16 & 0xff;
+  b[i++] = tl >>> 8 & 0xff;
+  b[i++] = tl & 0xff;
+
+  // `time_mid`
+  var tmh = (msecs / 0x100000000 * 10000) & 0xfffffff;
+  b[i++] = tmh >>> 8 & 0xff;
+  b[i++] = tmh & 0xff;
+
+  // `time_high_and_version`
+  b[i++] = tmh >>> 24 & 0xf | 0x10; // include version
+  b[i++] = tmh >>> 16 & 0xff;
+
+  // `clock_seq_hi_and_reserved` (Per 4.2.2 - include variant)
+  b[i++] = clockseq >>> 8 | 0x80;
+
+  // `clock_seq_low`
+  b[i++] = clockseq & 0xff;
+
+  // `node`
+  for (var n = 0; n < 6; ++n) {
+    b[i + n] = node[n];
+  }
+
+  return buf ? buf : bytesToUuid(b);
+}
+
+module.exports = v1;
+
+
+/***/ }),
+
 /***/ "./node_modules/webpack/buildin/global.js":
 /*!******************************************************************************************************!*\
   !*** delegated ./node_modules/webpack/buildin/global.js from dll-reference dll_6dc2816e14fab51b8269 ***!
@@ -13058,7 +13033,7 @@ function (_App) {
 /*!**************************!*\
   !*** ./store/actions.js ***!
   \**************************/
-/*! exports provided: ON_NAV, ON_REGISTER, ON_LOGIN, ON_USER_REGISTER, onNav, onRegister, onLogin, onUserRegister */
+/*! exports provided: ON_NAV, ON_REGISTER, ON_LOGIN, ON_STORE, storeSections, onNav, onRegister, onLogin, onStore */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13066,15 +13041,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ON_NAV", function() { return ON_NAV; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ON_REGISTER", function() { return ON_REGISTER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ON_LOGIN", function() { return ON_LOGIN; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ON_USER_REGISTER", function() { return ON_USER_REGISTER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ON_STORE", function() { return ON_STORE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "storeSections", function() { return storeSections; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onNav", function() { return onNav; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onRegister", function() { return onRegister; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onLogin", function() { return onLogin; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onUserRegister", function() { return onUserRegister; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onStore", function() { return onStore; });
 var ON_NAV = 'ON_NAV';
 var ON_REGISTER = 'ON_REGISTER';
-var ON_LOGIN = 'ON_LOGIN';
-var ON_USER_REGISTER = 'ON_USER_REGISTER';
+var ON_LOGIN = 'ON_LOGIN'; //export const ON_USER_REGISTER = 'ON_USER_REGISTER';
+
+var ON_STORE = 'ON_STORE_SECTIONS';
+var storeSections = {
+  OPEN_STORE: 'OPEN_STORE',
+  HOME: 'HOME',
+  PRODUCT_INFO: 'PRODUCT_INFO',
+  BISUTERIA: 'BISUTERIA',
+  JUGUETE: 'JUGUETE',
+  GOLOSINA: 'GOLOSINA',
+  MUSICA: 'MUSICA',
+  EBOOK: 'EBOOK',
+  TV: 'TV'
+};
 var onNav = function onNav() {
   return {
     type: ON_NAV
@@ -13090,11 +13078,12 @@ var onLogin = function onLogin(option) {
     type: ON_LOGIN,
     option: option
   };
-};
-var onUserRegister = function onUserRegister(user) {
+}; //export const  onUserRegister = user => ({ type: ON_USER_REGISTER, user });
+
+var onStore = function onStore(section) {
   return {
-    type: ON_USER_REGISTER,
-    user: user
+    type: ON_STORE,
+    section: section
   };
 };
 
@@ -13111,9 +13100,13 @@ var onUserRegister = function onUserRegister(user) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "greenlink", function() { return greenlink; });
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./actions */ "./store/actions.js");
+/* harmony import */ var uuid_v1__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! uuid/v1 */ "./node_modules/uuid/v1.js");
+/* harmony import */ var uuid_v1__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(uuid_v1__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -13121,22 +13114,264 @@ var initialState = {
   nav: false,
   registro: false,
   login: false,
-  user: [{
-    id: 'greenqueen',
-    mail: 'admin@mail.com',
-    pass: '123456',
-    name: 'sophie',
-    lastName: 'green',
-    birthday: '01/07/2019',
-    genre: 'mujer',
-    perfilImg: '/static/queengreen.jpg',
-    frontPageImg: '/static/queenfront.jpg',
-    frontPageQuote: 'comparte con los tuyos en green link',
-    greencoins: 5000,
-    posts: [],
-    friends: [],
-    gifts: []
-  }]
+
+  /*user:[
+    {
+      id: 'greenqueen',
+      mail: 'admin@mail.com',
+      pass: '123456',
+      name: 'sophie',
+      lastName: 'green',
+      birthday: '01/07/2019',
+      genre: 'mujer',
+      perfilImg: '/static/queengreen.jpg',
+      frontPageImg: '/static/queenfront.jpg',
+      frontPageQuote: 'comparte con los tuyos en green link',
+      greencoins: 5000,
+      posts: [],
+      friends: [],
+      gifts: [],
+    }
+  ],*/
+  store: {
+    visible: false,
+    home: true,
+    productInfo: false,
+    bisuteria: {
+      visible: false,
+      items: [{
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'bisuteria',
+        name: 'item-1',
+        url: '/static/bisuteria/item-1.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'bisuteria',
+        name: 'item-2',
+        url: '/static/bisuteria/item-2.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'bisuteria',
+        name: 'item-3',
+        url: '/static/bisuteria/item-3.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'bisuteria',
+        name: 'item-4',
+        url: '/static/bisuteria/item-4.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'bisuteria',
+        name: 'item-5',
+        url: '/static/bisuteria/item-5.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'bisuteria',
+        name: 'item-6',
+        url: '/static/bisuteria/item-6.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }]
+    },
+    juguete: {
+      visible: false,
+      items: [{
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'juguete',
+        name: 'item-1',
+        url: '/static/juguete/item-1.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'juguete',
+        name: 'item-2',
+        url: '/static/juguete/item-2.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'juguete',
+        name: 'item-3',
+        url: '/static/juguete/item-3.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'juguete',
+        name: 'item-4',
+        url: '/static/juguete/item-4.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }]
+    },
+    golosina: {
+      visible: false,
+      items: [{
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'juguete',
+        name: 'item-1',
+        url: '/static/golosina/item-1.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'juguete',
+        name: 'item-2',
+        url: '/static/golosina/item-2.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'juguete',
+        name: 'item-3',
+        url: '/static/golosina/item-3.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'juguete',
+        name: 'item-4',
+        url: '/static/golosina/item-4.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'juguete',
+        name: 'item-5',
+        url: '/static/golosina/item-5.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'juguete',
+        name: 'item-6',
+        url: '/static/golosina/item-6.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }]
+    },
+    musica: {
+      visible: false,
+      items: [{
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'musica',
+        name: 'item-1',
+        url: '/static/musica/item-1.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'musica',
+        name: 'item-2',
+        url: '/static/musica/item-2.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'musica',
+        name: 'item-3',
+        url: '/static/musica/item-3.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'musica',
+        name: 'item-4',
+        url: '/static/musica/item-4.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'musica',
+        name: 'item-5',
+        url: '/static/musica/item-5.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }]
+    },
+    ebook: {
+      visible: false,
+      items: [{
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'ebook',
+        name: 'item-1',
+        url: '/static/ebook/item-1.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'ebook',
+        name: 'item-2',
+        url: '/static/ebook/item-2.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'ebook',
+        name: 'item-3',
+        url: '/static/ebook/item-3.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'ebook',
+        name: 'item-4',
+        url: '/static/ebook/item-4.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'ebook',
+        name: 'item-5',
+        url: '/static/ebook/item-5.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'ebook',
+        name: 'item-6',
+        url: '/static/ebook/item-6.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }]
+    },
+    tv: {
+      visible: false,
+      items: [{
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        tag: 'tv',
+        name: 'item-1',
+        url: '/static/tv/item-1.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        name: 'item-2',
+        tag: 'tv',
+        url: '/static/tv/item-2.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }, {
+        id: uuid_v1__WEBPACK_IMPORTED_MODULE_3___default()(),
+        name: 'item-3',
+        tag: 'tv',
+        url: '/static/tv/item-3.jpg',
+        price: '$1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, cumque atque, dolore qui, tempora delectus provident saepe dicta minus iusto iste autem? Aut, ipsum. Ipsam illo perspiciatis optio architecto cumque!'
+      }]
+    }
+  }
 };
 
 var nav = function nav() {
@@ -13171,24 +13406,234 @@ var login = function login() {
 
   return state;
 };
-
-var user = function user() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState.user;
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
+/*const user = (state = initialState.user, action) => {
   switch (action) {
-    case _actions__WEBPACK_IMPORTED_MODULE_2__["ON_USER_REGISTER"]:
-      return [].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(state), [action.user]);
-
+    case ON_USER_REGISTER: 
+      return [...state, action.user];
     default:
       return state;
   }
+}*/
+
+
+var store = function store() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState.store;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  if (action.type === _actions__WEBPACK_IMPORTED_MODULE_2__["ON_STORE"] && action.section === _actions__WEBPACK_IMPORTED_MODULE_2__["storeSections"].OPEN_STORE) {
+    return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
+      visible: !state.visible
+    });
+  }
+
+  if (action.type === _actions__WEBPACK_IMPORTED_MODULE_2__["ON_STORE"] && action.section === _actions__WEBPACK_IMPORTED_MODULE_2__["storeSections"].HOME) {
+    return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
+      home: true,
+      productInfo: false,
+      bisuteria: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.bisuteria, {
+        visible: false
+      }),
+      juguete: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.juguete, {
+        visible: false
+      }),
+      golosina: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.golosina, {
+        visible: false
+      }),
+      musica: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.musica, {
+        visible: false
+      }),
+      ebook: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.ebook, {
+        visible: false
+      }),
+      tv: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.tv, {
+        visible: false
+      })
+    });
+  }
+
+  if (action.type === _actions__WEBPACK_IMPORTED_MODULE_2__["ON_STORE"] && action.section === _actions__WEBPACK_IMPORTED_MODULE_2__["storeSections"].PRODUCT_INFO) {
+    return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
+      home: false,
+      productInfo: true,
+      bisuteria: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.bisuteria, {
+        visible: false
+      }),
+      juguete: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.juguete, {
+        visible: false
+      }),
+      golosina: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.golosina, {
+        visible: false
+      }),
+      musica: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.musica, {
+        visible: false
+      }),
+      ebook: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.ebook, {
+        visible: false
+      }),
+      tv: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.tv, {
+        visible: false
+      })
+    });
+  }
+
+  if (action.type === _actions__WEBPACK_IMPORTED_MODULE_2__["ON_STORE"] && action.section === _actions__WEBPACK_IMPORTED_MODULE_2__["storeSections"].BISUTERIA) {
+    return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
+      home: false,
+      productInfo: false,
+      bisuteria: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.bisuteria, {
+        visible: true
+      }),
+      juguete: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.juguete, {
+        visible: false
+      }),
+      golosina: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.golosina, {
+        visible: false
+      }),
+      musica: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.musica, {
+        visible: false
+      }),
+      ebook: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.ebook, {
+        visible: false
+      }),
+      tv: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.tv, {
+        visible: false
+      })
+    });
+  }
+
+  if (action.type === _actions__WEBPACK_IMPORTED_MODULE_2__["ON_STORE"] && action.section === _actions__WEBPACK_IMPORTED_MODULE_2__["storeSections"].JUGUETE) {
+    return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
+      home: false,
+      productInfo: false,
+      bisuteria: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.bisuteria, {
+        visible: false
+      }),
+      juguete: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.juguete, {
+        visible: true
+      }),
+      golosina: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.golosina, {
+        visible: false
+      }),
+      musica: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.musica, {
+        visible: false
+      }),
+      ebook: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.ebook, {
+        visible: false
+      }),
+      tv: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.tv, {
+        visible: false
+      })
+    });
+  }
+
+  if (action.type === _actions__WEBPACK_IMPORTED_MODULE_2__["ON_STORE"] && action.section === _actions__WEBPACK_IMPORTED_MODULE_2__["storeSections"].GOLOSINA) {
+    return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
+      home: false,
+      productInfo: false,
+      bisuteria: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.bisuteria, {
+        visible: false
+      }),
+      juguete: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.juguete, {
+        visible: false
+      }),
+      golosina: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.golosina, {
+        visible: true
+      }),
+      musica: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.musica, {
+        visible: false
+      }),
+      ebook: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.ebook, {
+        visible: false
+      }),
+      tv: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.tv, {
+        visible: false
+      })
+    });
+  }
+
+  if (action.type === _actions__WEBPACK_IMPORTED_MODULE_2__["ON_STORE"] && action.section === _actions__WEBPACK_IMPORTED_MODULE_2__["storeSections"].MUSICA) {
+    return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
+      home: false,
+      productInfo: false,
+      bisuteria: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.bisuteria, {
+        visible: false
+      }),
+      juguete: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.juguete, {
+        visible: false
+      }),
+      golosina: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.golosina, {
+        visible: false
+      }),
+      musica: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.musica, {
+        visible: true
+      }),
+      ebook: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.ebook, {
+        visible: false
+      }),
+      tv: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.tv, {
+        visible: false
+      })
+    });
+  }
+
+  if (action.type === _actions__WEBPACK_IMPORTED_MODULE_2__["ON_STORE"] && action.section === _actions__WEBPACK_IMPORTED_MODULE_2__["storeSections"].EBOOK) {
+    return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
+      home: false,
+      productInfo: false,
+      bisuteria: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.bisuteria, {
+        visible: false
+      }),
+      juguete: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.juguete, {
+        visible: false
+      }),
+      golosina: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.golosina, {
+        visible: false
+      }),
+      musica: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.musica, {
+        visible: false
+      }),
+      ebook: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.ebook, {
+        visible: true
+      }),
+      tv: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.tv, {
+        visible: false
+      })
+    });
+  }
+
+  if (action.type === _actions__WEBPACK_IMPORTED_MODULE_2__["ON_STORE"] && action.section === _actions__WEBPACK_IMPORTED_MODULE_2__["storeSections"].TV) {
+    return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
+      home: false,
+      productInfo: false,
+      bisuteria: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.bisuteria, {
+        visible: false
+      }),
+      juguete: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.juguete, {
+        visible: false
+      }),
+      golosina: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.golosina, {
+        visible: false
+      }),
+      musica: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.musica, {
+        visible: false
+      }),
+      ebook: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.ebook, {
+        visible: false
+      }),
+      tv: _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state.tv, {
+        visible: true
+      })
+    });
+  }
+
+  return state;
 };
 
 var greenlink = Object(redux__WEBPACK_IMPORTED_MODULE_1__["combineReducers"])({
   registro: registro,
   login: login,
-  nav: nav
+  nav: nav,
+  store: store
 });
 
 /***/ }),

@@ -6,11 +6,15 @@ class Foo extends Component{
   super(props);
   this.state = {
     api: '',
-    endpoint: 'http://localhost:4001',
+    endpoint: 'https://socket-test.ftandcompany.now.sh/api/test.js',
   }
 }
 
   componentDidMount() {
+    fetch('https://socket-test.ftandcompany.now.sh/api/test.js', {
+      headers: {"Content-Type": "application/json"},
+      mode: "cors",
+    }).then(res => res.text()).then(res => console.log(res));
     const { endpoint } = this.state;
     const socket = socketIoClient(endpoint);
     socket.on('fromApi', data => this.setState({ api: data }));

@@ -1,6 +1,7 @@
 import Header from '../header/header';
 import Head from 'next/head';
 import '../../layout/base.scss';
+import Store from '../store/store';
 
 const Layout = ({ children }) => (
   <div className="layout_cont">
@@ -12,6 +13,7 @@ const Layout = ({ children }) => (
       <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico&display=swap" rel="stylesheet" />
       <title>Greenlink | Comparte con los tuyos</title>
     </Head>
+    <Store />
     <Header />
     {children}
   </div>

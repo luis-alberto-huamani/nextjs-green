@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "now-build": "next build"
+    "now-build": "next build && node ./api/foo.js"
   },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.5.4",

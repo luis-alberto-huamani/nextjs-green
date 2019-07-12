@@ -1,0 +1,80 @@
+.my_button button {
+  background: transparent;
+  border: none;
+  outline: none;
+  transition: .5s ease;
+  padding: .2rem .3rem;
+  font-size: 14px !important; }
+  .my_button button:focus {
+    outline: none; }
+
+.my_button .light {
+  border: 1px solid #fff;
+  color: #fff; }
+  .my_button .light:hover {
+    background: #8bb940;
+    cursor: pointer; }
+  .my_button .light:active {
+    background: #669f09; }
+
+.my_button .dark {
+  background: #8bb940;
+  color: #8bb940;
+  border: 1px solid #8bb940; }
+  .my_button .dark:hover {
+    background: #8bb940;
+    color: #fff;
+    cursor: pointer; }
+  .my_button .dark:active {
+    background: #8bb940; }
+
+.my_button .md {
+  padding: .3rm .5rem;
+  font-size: 16px;
+  border-width: 3px; }
+
+.my_button .lg {
+  padding: .3rem .5rem;
+  font-size: 36px !important;
+  border-width: 5px; }
+
+.my_button button {
+  background: transparent;
+  border: none;
+  outline: none;
+  transition: .5s ease;
+  padding: .2rem .3rem;
+  font-size: 14px !important; }
+  .my_button button:focus {
+    outline: none; }
+
+.my_button .light {
+  border: 1px solid #fff;
+  color: #fff;
+  background: #8bb940; }
+  .my_button .light:hover {
+    background: #669f09;
+    cursor: pointer; }
+  .my_button .light:active {
+    transform: scale(0.98); }
+
+.my_button .dark {
+  border-color: #8bb940;
+  color: #fff;
+  border: 1px solid #8bb940; }
+  .my_button .dark:hover {
+    background: #669f09;
+    cursor: pointer; }
+  .my_button .dark:active {
+    background: #8bb940; }
+
+.my_button .md {
+  padding: .3rm .5rem;
+  font-size: 16px;
+  border-width: 3px; }
+
+.my_button .lg {
+  padding: .3rem .5rem;
+  font-size: 36px !important;
+  border-width: 5px; }
+

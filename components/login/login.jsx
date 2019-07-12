@@ -55,8 +55,6 @@ class Login extends Component {
         mail: mail,
         pass: pass,
       }
-      console.log(data);
-      /*fetch('/api/login.js'*/
       fetch('/api/login.js', {
         headers: { "Content-Type": "application/json" },
         method: "POST",

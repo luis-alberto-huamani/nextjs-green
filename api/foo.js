@@ -23,5 +23,4 @@ app.get('*', (req, res) => {
   res.status(200).send('hey');
 })
 
-module.exports = app;
-
+app.listen(4000);

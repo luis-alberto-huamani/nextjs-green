@@ -6,9 +6,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -19,9 +23,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -32,9 +40,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -45,9 +57,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -58,9 +74,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -71,9 +91,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -84,9 +108,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -97,9 +125,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -110,9 +142,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -123,9 +159,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -136,9 +176,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -149,9 +193,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -162,9 +210,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -175,9 +227,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -188,9 +244,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -201,9 +261,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -214,9 +278,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -227,9 +295,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -240,9 +312,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -253,9 +329,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -266,9 +346,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -279,9 +363,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -292,9 +380,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -305,9 +397,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -318,9 +414,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -331,9 +431,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -344,9 +448,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -357,9 +465,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -370,9 +482,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -383,9 +499,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -396,9 +516,13 @@
         "usedIds": {}
       },
       "chunks": {
-        "byName": {},
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
         "bySource": {},
-        "usedIds": []
+        "usedIds": [
+          0
+        ]
       }
     }
   ],
@@ -471,8 +595,32 @@
     }
   },
   "chunks": {
-    "byName": {},
+    "byName": {
+      "commons": 0,
+      "static/runtime/webpack.js": 1,
+      "styles": 2,
+      "static/WHGkjjk0KliUsUncTFgu2/pages/_app.js": 3,
+      "static/WHGkjjk0KliUsUncTFgu2/pages/_error.js": 4,
+      "static/WHGkjjk0KliUsUncTFgu2/pages/foo.js": 5,
+      "static/WHGkjjk0KliUsUncTFgu2/pages/index.js": 6,
+      "static/WHGkjjk0KliUsUncTFgu2/pages/login.js": 7,
+      "static/WHGkjjk0KliUsUncTFgu2/pages/perfil.js": 8,
+      "static/WHGkjjk0KliUsUncTFgu2/pages/postregistro.js": 9,
+      "static/runtime/main.js": 10
+    },
     "bySource": {},
-    "usedIds": []
+    "usedIds": [
+      0,
+      1,
+      10,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
   }
 }

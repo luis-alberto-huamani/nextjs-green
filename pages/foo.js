@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Pusher from 'pusher-js';
-//import axios from 'axios';
+import axios from 'axios';
 
 class Foo extends Component{
   constructor(props){

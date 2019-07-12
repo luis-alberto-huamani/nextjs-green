@@ -1,14 +1,6 @@
-/*const app = require('./util/app');
-
-app.get('*', (req, res) => {
-  const name = req.query;
-  res.status(200).send(`bienvenido ${name}`);
-});
-
-module.exports = app;*/
-
 const app = require('./util/app');
 const Pusher = require('pusher');
+const axios = require('axios');
 
 var pusher = new Pusher({
   appId: '821952',
@@ -23,4 +15,4 @@ app.get('*', (req, res) => {
   res.status(200).send('hey');
 })
 
-app.listen(4000);
+app.listen();

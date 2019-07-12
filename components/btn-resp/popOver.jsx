@@ -15,6 +15,7 @@ class PopOver extends Component {
   logOut() {
     const { onLogin } = this.props;
     window.location = '/';
+    localStorage.removeItem('id');
     onLogin(false);
   }
 

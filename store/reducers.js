@@ -1,29 +1,15 @@
 import { combineReducers } from 'redux';
-import {ON_REGISTER, ON_LOGIN, ON_NAV, ON_STORE, storeSections } from './actions';
+import {ON_REGISTER, ON_LOGIN, ON_NAV, ON_STORE, storeSections, ON_USER, userAction } from './actions';
 import uuid from 'uuid/v1';
 
 export const initialState = {
   nav: false,
   registro: false,
   login: false,
-  /*user:[
-    {
-      id: 'greenqueen',
-      mail: 'admin@mail.com',
-      pass: '123456',
-      name: 'sophie',
-      lastName: 'green',
-      birthday: '01/07/2019',
-      genre: 'mujer',
-      perfilImg: '/static/queengreen.jpg',
-      frontPageImg: '/static/queenfront.jpg',
-      frontPageQuote: 'comparte con los tuyos en green link',
-      greencoins: 5000,
-      posts: [],
-      friends: [],
-      gifts: [],
-    }
-  ],*/
+  user:{
+    isLogged: false,
+    data:{}
+  },
   store:{
     visible: false,
     home: true,
@@ -433,10 +419,26 @@ const login = (state = initialState.login, action) => {
     }
     return state;
   }
+  const user = (state = initialState.user, action) => {
+    if (action.type === ON_USER && action.payload.action === userAction.LOG_IN) {
+      return Object.assign({}, state, {
+        isLogged: true,
+        data: action.payload.data,
+      });
+    }
+    if (action.type === ON_USER && action.payload.action === userAction.LOG_OUT) {
+      return Object.assign({}, state, {
+        isLogged: false,
+        data: action.payload.data,
+      }) 
+    }
+    return state;
+  }
 
 export const greenlink = combineReducers({
   registro,
   login,
   nav,
   store,
+  user,
 });

@@ -15,6 +15,7 @@ const UserSchema = new Schema({
   wallet: { type: Number, default: 500 },
   posts: Array,
   friends: Array,
+  friendReq: Array,
   gifts: { type: Number, default: 10 },
   comments: { type: Number, default: 5 }
 });

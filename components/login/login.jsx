@@ -56,6 +56,7 @@ class Login extends Component {
         pass: pass,
       }
       console.log(data);
+      /*fetch('/api/login.js'*/
       fetch('/api/login.js', {
         headers: { "Content-Type": "application/json" },
         method: "POST",
@@ -66,7 +67,7 @@ class Login extends Component {
             this.setState({ spinner: false, login: true });
             res.text()
               .then(resp => {
-                console.log(typeof resp);
+                localStorage.setItem('id', resp);
                 Router.push(`/perfil?id=${resp}`);
               })
           } else {

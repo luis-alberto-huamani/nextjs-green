@@ -88,10 +88,147 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./components/perfil/friends.jsx":
+/*!***************************************!*\
+  !*** ./components/perfil/friends.jsx ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _friends_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./friends.scss */ "./components/perfil/friends.scss");
+/* harmony import */ var _friends_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_friends_scss__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/media/felix/projects/green/components/perfil/friends.jsx";
+
+
+
+var Person = function Person(_ref) {
+  var perfilImg = _ref.perfilImg,
+      name = _ref.name,
+      lastName = _ref.lastName,
+      frontPageQuote = _ref.frontPageQuote,
+      remove = _ref.remove,
+      add = _ref.add;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "person_cont",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "person_header",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: remove,
+    title: "Eliminar",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }, "X")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "person_info",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: perfilImg,
+    className: "img-fluid",
+    alt: name,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "person_description",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, name, " ", lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, frontPageQuote))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "person_footer",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: add,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, "Agregar")));
+};
+
+var Friends = function Friends(_ref2) {
+  var users = _ref2.users;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "friends_main_cont",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }, users.map(function (user) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Person, {
+      name: user.name,
+      lastName: user.lastName,
+      perfilImg: user.perfilImg,
+      frontPageQuote: user.frontPageQuote,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    });
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Friends);
+
+/***/ }),
+
+/***/ "./components/perfil/friends.scss":
+/*!****************************************!*\
+  !*** ./components/perfil/friends.scss ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
 
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js":
 /*!**********************************************************************!*\
@@ -370,10 +507,10 @@ function _typeof(obj) {
 
 /***/ }),
 
-/***/ "./pages/foo.js":
-/*!**********************!*\
-  !*** ./pages/foo.js ***!
-  \**********************/
+/***/ "./pages/foo.jsx":
+/*!***********************!*\
+  !*** ./pages/foo.jsx ***!
+  \***********************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -386,16 +523,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var pusher_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! pusher-js */ "pusher-js");
-/* harmony import */ var pusher_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(pusher_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_perfil_friends_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/perfil/friends.scss */ "./components/perfil/friends.scss");
+/* harmony import */ var _components_perfil_friends_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_components_perfil_friends_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_perfil_friends__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/perfil/friends */ "./components/perfil/friends.jsx");
 
 
 
 
 
-var _jsxFileName = "/media/felix/projects/green/pages/foo.js";
+var _jsxFileName = "/media/felix/projects/green/pages/foo.jsx";
 
 
 
@@ -418,43 +554,22 @@ function (_Component) {
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Foo, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      var pusher = new pusher_js__WEBPACK_IMPORTED_MODULE_6___default.a('bfb62abbe03a8b1e8c89', {
-        cluster: 'us2',
-        forceTLS: true
-      });
-      var channel = pusher.subscribe('push');
-      channel.bind('my-push', function (data) {
-        _this2.setState({
-          api: data.message
-        });
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("section", {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 16
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_perfil_friends__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        users: users,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 17
         },
         __self: this
-      }, "Hola mundo"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29
-        },
-        __self: this
-      }, this.state.api));
+      }));
     }
   }]);
 
@@ -465,26 +580,15 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 3:
-/*!****************************!*\
-  !*** multi ./pages/foo.js ***!
-  \****************************/
+/***/ 4:
+/*!*****************************!*\
+  !*** multi ./pages/foo.jsx ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /media/felix/projects/green/pages/foo.js */"./pages/foo.js");
+module.exports = __webpack_require__(/*! /media/felix/projects/green/pages/foo.jsx */"./pages/foo.jsx");
 
-
-/***/ }),
-
-/***/ "axios":
-/*!************************!*\
-  !*** external "axios" ***!
-  \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("axios");
 
 /***/ }),
 
@@ -551,17 +655,6 @@ module.exports = require("core-js/library/fn/symbol");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/symbol/iterator");
-
-/***/ }),
-
-/***/ "pusher-js":
-/*!****************************!*\
-  !*** external "pusher-js" ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("pusher-js");
 
 /***/ }),
 

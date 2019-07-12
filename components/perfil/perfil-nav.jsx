@@ -17,6 +17,34 @@ import {
 import classnames from 'classnames';
 import AddPost from './add-post';
 import './perfil-nav.scss';
+import Friends from './friends';
+
+const users = [
+  {
+    name: 'jhon',
+    lastName: 'ebrio',
+    perfilImg: '/static/friend-1.jpg',
+    frontPageQuote: 'Debemos cuidar el mundo, yo siemre reciclo mis latas de cerveza'
+  },
+  {
+    name: 'sacha',
+    lastName: 'gray',
+    perfilImg: '/static/friend-2.jpg',
+    frontPageQuote: 'En el set de grabacion todos los condones se reciclan'
+  },
+  {
+    name: 'rachel',
+    lastName: 'star',
+    perfilImg: '/static/friend-3.jpg',
+    frontPageQuote: 'Debemos cuidar nuestras playas para evitar el sifilis'
+  },
+  {
+    name: 'mia',
+    lastName: 'kalifa',
+    perfilImg: '/static/friend-4.jpg',
+    frontPageQuote: 'No tengo nada que decir, solo entre aqui a subir mis videos para ganar greencoins'
+  }
+];
 
 class PerfilNav extends Component {
   constructor(props) {
@@ -27,6 +55,8 @@ class PerfilNav extends Component {
       imgUrl: null,
       posts:[],
       addModal: false,
+      reqFriend: [],
+      currentUser: '',
     };
     this.onToggle = this.onToggle.bind(this);
     this.onChangeText = this.onChangeText.bind(this);
@@ -35,8 +65,13 @@ class PerfilNav extends Component {
   }
 
   componentWillMount() {
-    const { posts } = this.props;
-    this.setState({ posts: posts });
+    const { posts, user } = this.props;
+    this.setState({ posts: posts, reqFriend: user.friendReq });
+  }
+
+  componentDidMount() {
+    const currentUser = localStorage.getItem('id');
+    this.setState({ currentUser });
   }
 
   onToggle(tab) {
@@ -106,8 +141,10 @@ class PerfilNav extends Component {
       imgUrl,
       posts,
       addModal,
+      reqFriend,
+      currentUser
     } = this.state;
-    const { store } = this.props;
+    const { store, user } = this.props;
     return (
       <div>
         {
@@ -151,15 +188,22 @@ class PerfilNav extends Component {
           <TabPane tabId='1'>
             <Row>
               <Col sm="12">
-                <AddPost
-                  value={history}
-                  onChangeText={this.onChangeText}
-                  img={imgUrl}
-                  onChangeImg={this.onChangeImg}
-                  onSubmit={this.addPost}
-                  modal={addModal}
-                />
-                <div className="line" />
+                <a href="http://localhost:3000/perfil?id=5d28ddcd08ad141c6d74e781">GreenQueen</a>
+                {
+                  currentUser === user._id && (
+                    <div>
+                      <AddPost
+                      value={history}
+                      onChangeText={this.onChangeText}
+                      img={imgUrl}
+                      onChangeImg={this.onChangeImg}
+                      onSubmit={this.addPost}
+                      modal={addModal}
+                    />
+                      <div className="line" />
+                    </div>
+                  )
+                }
               </Col>
             </Row>
             <Row>
@@ -178,7 +222,14 @@ class PerfilNav extends Component {
           <TabPane tabId='3'>
             <Row>
               <Col sm="12">
-                <h2>Tab 3</h2>
+                <h3>Solicitudes de amistad</h3>
+                <div className="friends_main_cont">
+                  {
+                    <Friends 
+                      users={users}
+                    />
+                  }                
+                </div>
               </Col>
             </Row>
           </TabPane>

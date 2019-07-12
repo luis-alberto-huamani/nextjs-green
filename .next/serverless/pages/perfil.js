@@ -1658,7 +1658,7 @@ function () {
         Document: _document_default.a,
         buildManifest: build_manifest,
         reactLoadableManifest: react_loadable_manifest,
-        buildId: "l_Ud1qmk2tjWmCPuyQGd-",
+        buildId: "XRlNk1eyvl9X_Vy9aVxWv",
         dynamicBuildId: false,
         assetPrefix: "",
         ampBindInitData: false

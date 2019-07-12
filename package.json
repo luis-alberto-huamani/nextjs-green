@@ -23,6 +23,8 @@
     "multer-storage-cloudinary": "^2.2.1",
     "next": "latest",
     "popper.js": "^1.15.0",
+    "pusher": "^2.2.1",
+    "pusher-js": "^4.4.0",
     "react": "latest",
     "react-dom": "latest",
     "react-redux": "^7.1.0",

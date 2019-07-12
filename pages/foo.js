@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
-import socketIoClient from 'socket.io-client';
+import Pusher from 'pusher-js';
+import axios from 'axios';
 
 class Foo extends Component{
   constructor(props){
   super(props);
   this.state = {
     api: '',
-    endpoint: 'https://socket-test.ftandcompany.now.sh/api/test.js',
+
   }
 }
 
   componentDidMount() {
-    fetch('https://socket-test.ftandcompany.now.sh/api/test.js', {
-      headers: {"Content-Type": "application/json"},
-      mode: "cors",
-    }).then(res => res.text()).then(res => console.log(res));
-    const { endpoint } = this.state;
-    const socket = socketIoClient(endpoint);
-    socket.on('fromApi', data => this.setState({ api: data }));
+    var pusher = new Pusher('bfb62abbe03a8b1e8c89', {
+      cluster: 'us2',
+      forceTLS: true
+    });
+    var channel = pusher.subscribe('push');
+    channel.bind('my-push', data => {
+      this.setState({ api: data.message });
+    });
   }
 
   render() {

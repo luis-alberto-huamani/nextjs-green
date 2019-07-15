@@ -38,7 +38,7 @@ class PerfilHeader extends Component{
     }
 
     //fetch('/api/friendRequest.js', options)
-    fetch('http://localhost:4000/api/friendRequest', options)
+    fetch('/api/friendRequest.js', options)
       .then(res => {
         if(res.status === 200) {
           this.setState({ friendReq: true });

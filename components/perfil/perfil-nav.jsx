@@ -152,6 +152,7 @@ class PerfilNav extends Component {
       fetch(`/api/addFriend.js`, options)
         .then(res => res.json())
         .then(res => {
+          console.log(res)
           this.setState({ friends: res });
         })
     }
@@ -162,6 +163,7 @@ class PerfilNav extends Component {
           const elements = reqFriend.map((item) => {
             return item.id !== res;
           });
+          console.log(res)
           this.setState({ reqFriend: elements });
         });
     }

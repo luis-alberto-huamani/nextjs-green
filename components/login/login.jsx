@@ -67,16 +67,10 @@ class Login extends Component {
         .then(res => {
           if (res.status === 201) {
             this.setState({ spinner: false, login: true });
-            res.json()
+            res.text()
               .then(resp => {
-                console.log(resp._id);
-                localStorage.setItem('id', resp._id);
-                const payload = {
-                  action: userAction.LOG_IN,
-                  data: resp,
-                }
-                onUser(payload);
-                Router.push(`/perfil?id=${resp._id}`);
+                localStorage.setItem('id', resp);
+                Router.push(`/perfil?id=${resp}`);
               })
           } else {
               this.setState({ fail: true, login: false, spinner: false });

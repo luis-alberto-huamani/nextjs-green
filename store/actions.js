@@ -3,6 +3,7 @@ export const ON_REGISTER = 'ON_REGISTER';
 export const ON_LOGIN = 'ON_LOGIN';
 export const ON_USER = 'ON_USER';
 export const ON_STORE = 'ON_STORE_SECTIONS';
+export const ON_NOTIFICATION = 'ON_NOTIFICATION';
 
 export const storeSections = {
   OPEN_STORE: 'OPEN_STORE',
@@ -20,8 +21,15 @@ export const userAction = {
   LOG_OUT: 'LOG_OUT'
 }
 
+export const notifications = {
+  GIFT: 'GIFT',
+  HEART: 'HEART',
+  FRIEND: 'FRIEND',
+}
+
 export const onNav = () => ({ type: ON_NAV, });
 export const onRegister = () => ({ type: ON_REGISTER });
 export const onLogin = option => ({ type: ON_LOGIN, option });
 export const onUser = payload => ({ type: ON_USER, payload });
 export const onStore = section => ({ type: ON_STORE, section });
+export const onNotifications = payload => ({ type: ON_NOTIFICATION, payload });

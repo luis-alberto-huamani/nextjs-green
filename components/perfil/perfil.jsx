@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { onLogin } from '../../store/actions';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import './perfil.scss';
 import PerfilHeader from './perfil-header';
 import PerfilNav from './perfil-nav';
@@ -10,11 +7,6 @@ import PerfilNav from './perfil-nav';
 class Perfil extends Component {
   constructor(props) {
     super(props);
-  }
-
-  componentDidMount() {
-    const { onLogin } = this.props;
-    onLogin(true);
   }
 
   render() {
@@ -28,7 +20,4 @@ class Perfil extends Component {
   }
 }
 
-const mapStateToProps = state => ({ login: state.login });
-const mapDispatchToProps = dispatch => bindActionCreators({ onLogin }, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(Perfil);
+export default Perfil;

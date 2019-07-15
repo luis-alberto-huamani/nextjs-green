@@ -5,30 +5,7 @@ const FriendReq = require('../utils/classes/friend-req');
 
 [...mongooseConnect];
 
-app.post('/api/login', async (req, res) => {
-  const user = req.body;
-  const validateUser = await UserSchema.findOne({ mail: user.mail, pass: user.pass });
-  if (validateUser) {
-    res.status(201).json(validateUser);
-  } else {
-    res.status(400).send();
-  }
-
-});
-
-
-app.get('/api/perfil', async (req, res) => {
-  const { id } = req.query;
-  const user = await UserSchema.findById(id);
-  if (user) {
-    res.status(200).json(user);
-  } else {
-    res.status(400).send();
-  }
-});
-
-
-app.post('/api/friendRequest', async (req, res) => {
+app.post('*', async (req, res) => {
   try {
     const { currentUser, targetUser } = req.body;
     const newRequest = await UserSchema.findById(currentUser);
@@ -55,6 +32,4 @@ app.post('/api/friendRequest', async (req, res) => {
   }
 });
 
-app.listen(4000, console.log('server on'));
-
-//module.exports = app;
+module.exports = app;

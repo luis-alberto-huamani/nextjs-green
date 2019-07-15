@@ -59,8 +59,7 @@ class Login extends Component {
         mail: mail,
         pass: pass,
       }
-      //fetch('/api/login.js', {
-      fetch('http://localhost:4000/api/login', {
+      fetch('/api/login.js', {
         headers: { "Content-Type": "application/json" },
         method: "POST",
         body: JSON.stringify(data),
@@ -70,6 +69,7 @@ class Login extends Component {
             this.setState({ spinner: false, login: true });
             res.json()
               .then(resp => {
+                console.log(resp._id);
                 localStorage.setItem('id', resp._id);
                 const payload = {
                   action: userAction.LOG_IN,

@@ -3,6 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import CardPost from '../card-post/card-post';
 import { connect } from 'react-redux';
 import Store from '../store/store';
+import Link from 'next/link';
 import {
   TabContent,
   TabPane,
@@ -16,7 +17,7 @@ import classnames from 'classnames';
 import AddPost from './add-post';
 import './perfil-nav.scss';
 import Friends from './friends';
-
+import uuid from 'uuid/v1';
 /*const users = [
   {
     name: 'jhon',
@@ -53,6 +54,7 @@ class PerfilNav extends Component {
       imgUrl: null,
       posts:[],
       addModal: false,
+      friends: [],
       reqFriend: [],
       currentUser: '',
     };
@@ -60,11 +62,12 @@ class PerfilNav extends Component {
     this.onChangeText = this.onChangeText.bind(this);
     this.onChangeImg = this.onChangeImg.bind(this);
     this.addPost = this.addPost.bind(this);
+    this.handleFriend = this.handleFriend.bind(this);
   }
 
   componentWillMount() {
     const { posts, user } = this.props;
-    this.setState({ posts: posts, reqFriend: user.friendReq });
+    this.setState({ posts: posts, reqFriend: user.friendReq, friends: user.friends });
   }
 
   componentDidMount() {
@@ -131,6 +134,38 @@ class PerfilNav extends Component {
       })
       .catch(err => console.log(err));
   }
+
+  handleFriend(action, id) {
+    const { reqFriend } = this.state;
+    const currentUser = localStorage.getItem('id');
+    const targetUser = id;
+    const data = {
+      currentUser,
+      targetUser
+    }
+    const options = {
+      headers: { "Content-Type": "application/json" },
+      method: 'POST',
+      body: JSON.stringify(data),
+    }
+    if (action === 'add') {
+      fetch(`/api/addFriend.js`, options)
+        .then(res => res.json())
+        .then(res => {
+          this.setState({ reqFriend: res });
+        })
+    }
+    if (action === 'rm') {
+      fetch(`/api/rmFriend.js`, options)
+        .then(res => res.text())
+        .then(res => {
+          const elements = friendReq.map((item) => {
+            return item.id !== res;
+          });
+          this.setState({ friendReq: elements });
+        });
+    }
+  }
   
   render() {
     const {
@@ -140,6 +175,7 @@ class PerfilNav extends Component {
       posts,
       addModal,
       reqFriend,
+      friends,
       currentUser
     } = this.state;
     const { store, user } = this.props;
@@ -212,22 +248,50 @@ class PerfilNav extends Component {
           <TabPane tabId='2'>
             <Row>
               <Col sm="12">
-                <h2>Tab 2</h2>
+                <div className="info_perfil_con">
+                  <h2>Historia</h2>
+                  <p>{user.history}</p>
+                </div>
+                <div className="info_perfil_con">
+                  <h2>intereses</h2>
+                  <p>{user.interest}</p>
+                </div>
+                <div className="info_perfil_con">
+                  <h2>correo</h2>
+                  <p>{user.mail}</p>
+                </div>
               </Col>
             </Row>
           </TabPane>
           <TabPane tabId='3'>
             <Row>
-              <Col sm="12">
-                <h3>Solicitudes de amistad</h3>
-                <div className="friends_main_cont">
+              <Col sm='6'>
+                <ul className="friend_main_cont">
+                  {
+                    friends.map((item) => (
+                      <li key={uuid()}>
+                        <a href={item.url}>
+                          <div className="friend_cont">
+                            <img className="img-fluid" src={item.perfilImg} alt=""/>
+                            <p>{item.fullName}</p>
+                          </div>
+                        </a>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </Col>
+              <Col sm="6">
+                <div>
+                <h2 style={{marginTop: '2rem', fontSize: "1rem"}}>Solicitudes de amistad</h2>
                   {
                     <Friends 
                       users={reqFriend}
+                      onClick={this.handleFriend}
                     />
                   }                
                 </div>
-              </Col>
+            </Col>
             </Row>
           </TabPane>
           <TabPane tabId='4'>

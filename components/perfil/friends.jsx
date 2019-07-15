@@ -1,10 +1,10 @@
 import './friends.scss';
 
 
-const Person = ({ perfilImg, name, url, frontPageQuote, remove, add }) => (
+const Person = ({ id,  perfilImg, name, url, frontPageQuote, onClick}) => (
   <div className="person_cont">
     <div className="person_header">
-      <button onClick={remove} title="Eliminar">X</button>
+      <button id={id} onClick={()=>onClick('rm', id)} title="Eliminar">X</button>
     </div>
     <div className="person_info">
       <img src={perfilImg} className="img-fluid" alt={name}/>
@@ -14,17 +14,19 @@ const Person = ({ perfilImg, name, url, frontPageQuote, remove, add }) => (
       </div>
     </div>
     <div className="person_footer">
-      <button onClick={add}>Agregar</button>
+      <button onClick={()=>onClick('add', id)}>Agregar</button>
     </div>
   </div>
 );
 
 
-const Friends = ({ users }) => (
+const Friends = ({ users, onClick }) => (
   <section className="friends_main_cont">
     {
       users.map(user => (
         <Person 
+        id={user.id}
+        onClick={onClick}
         name={user.fullName}
         url={user.url}
         perfilImg={user.perfilImg}

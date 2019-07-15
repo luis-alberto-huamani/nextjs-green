@@ -26,7 +26,7 @@ class Foo extends Component{
     const { api } = this.state;
     return(
       <div>
-        <p>{api}</p>
+        
       </div>
     );
   }

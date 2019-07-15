@@ -8,7 +8,7 @@ import PopOver from '../btn-resp/popOver';
 import Notifications from '../notifications/notifications';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { onNav } from '../../store/actions';
+import { onNav, onLogin } from '../../store/actions';
 import { color } from '../btn-resp/css-layout';
 
 const iconBars = (
@@ -37,11 +37,26 @@ class Header extends Component{
   constructor(props){
     super(props);
     this.state = {
-      down: false
+      down: false,
+      notifications: {
+        heart: 1,
+        gifts: 2,
+        friendReq: [1,2]
+      },
     }
   }
 
   componentDidMount() {
+    const id = localStorage.getItem('id');
+    const { onLogin } = this.props;
+    if (id) {
+      fetch(`/api/notifications.js?id=${id}`)
+        .then(res => res.json())
+        .then(res => {
+          onLogin(true);
+          this.setState({ notifications: res });
+        });
+    }
     window.onscroll = () => {
       if(window.scrollY > 50) {
         this.setState({ down: true });
@@ -52,7 +67,7 @@ class Header extends Component{
   }
 
   render(){
-    const { down } = this.state;
+    const { down, notifications } = this.state;
     const { isLogin } = this.props;
     return(
       <header className={classnames({
@@ -67,7 +82,7 @@ class Header extends Component{
               isLogin 
               ? (
                   <>
-                    <Notifications />
+                    <Notifications notes={notifications}/>
                     <button style={{background: "transparent", border: "none"}} onClick={this.props.onNav} id="btn-resp" type="button">
                       {iconBars}
                       <style jsx>{`
@@ -80,7 +95,7 @@ class Header extends Component{
                     <PopOver popOpen={this.props.nav} />
                   </>
               )
-              : <Link href="/login"><Button color="light">Login</Button></Link>
+              : <Link href="/login"><button className="btn_login" color="light">Login</button></Link>
             }
           </nav>
         </div>
@@ -89,7 +104,7 @@ class Header extends Component{
   }
 };
 
-const mapDispatchToProps = dispatch => bindActionCreators({ onNav }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ onNav, onLogin }, dispatch);
 const mapStateToProps = state => ({
   isLogin: state.login,
   nav: state.nav,

@@ -28,3 +28,45 @@
 .card_body{
   padding-top: 0;
 }
+
+.info_perfil_con{
+  margin: 1.5rem 0;
+  h2{
+    color: $prim;
+    font-size: 18px;
+    text-transform: capitalize;
+  }
+  p{
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+.friend_main_cont{
+  margin: 0 auto;
+  margin-top: 2rem;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  a{
+    display: block;
+  }
+  .friend_cont{
+    display: block;
+    width: 100px;
+    margin: 1rem;
+    &:hover{
+      cursor: pointer;
+    }
+    img{
+      width: 100px;
+      height: 120px;
+    }
+    p{
+      font-size: 14px;
+      color: $prim;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}

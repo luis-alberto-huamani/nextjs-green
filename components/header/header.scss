@@ -26,3 +26,20 @@
   transition: .5s ease;
   height: 50px;
 }
+
+.btn_login{
+  background: $prim;
+  border: 1px solid #fff;
+  font-size: 14px;
+  color: #fff;
+  transition: 250ms ease;
+  &:focus{
+    outline: none;
+  }
+  &:hover{
+    background: $sec;
+  }
+  &:active{
+    transform: scale(.95);
+  }
+}

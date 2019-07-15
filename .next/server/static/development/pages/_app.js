@@ -1806,7 +1806,7 @@ function (_App) {
 /*!**************************!*\
   !*** ./store/actions.js ***!
   \**************************/
-/*! exports provided: ON_NAV, ON_REGISTER, ON_LOGIN, ON_USER, ON_STORE, storeSections, userAction, onNav, onRegister, onLogin, onUser, onStore */
+/*! exports provided: ON_NAV, ON_REGISTER, ON_LOGIN, ON_USER, ON_STORE, ON_NOTIFICATION, storeSections, userAction, notifications, onNav, onRegister, onLogin, onUser, onStore, onNotifications */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1816,18 +1816,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ON_LOGIN", function() { return ON_LOGIN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ON_USER", function() { return ON_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ON_STORE", function() { return ON_STORE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ON_NOTIFICATION", function() { return ON_NOTIFICATION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "storeSections", function() { return storeSections; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "userAction", function() { return userAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "notifications", function() { return notifications; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onNav", function() { return onNav; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onRegister", function() { return onRegister; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onLogin", function() { return onLogin; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onUser", function() { return onUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onStore", function() { return onStore; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onNotifications", function() { return onNotifications; });
 var ON_NAV = 'ON_NAV';
 var ON_REGISTER = 'ON_REGISTER';
 var ON_LOGIN = 'ON_LOGIN';
 var ON_USER = 'ON_USER';
 var ON_STORE = 'ON_STORE_SECTIONS';
+var ON_NOTIFICATION = 'ON_NOTIFICATION';
 var storeSections = {
   OPEN_STORE: 'OPEN_STORE',
   HOME: 'HOME',
@@ -1842,6 +1846,11 @@ var storeSections = {
 var userAction = {
   LOG_IN: 'LOG_IN',
   LOG_OUT: 'LOG_OUT'
+};
+var notifications = {
+  GIFT: 'GIFT',
+  HEART: 'HEART',
+  FRIEND: 'FRIEND'
 };
 var onNav = function onNav() {
   return {
@@ -1869,6 +1878,12 @@ var onStore = function onStore(section) {
   return {
     type: ON_STORE,
     section: section
+  };
+};
+var onNotifications = function onNotifications(payload) {
+  return {
+    type: ON_NOTIFICATION,
+    payload: payload
   };
 };
 

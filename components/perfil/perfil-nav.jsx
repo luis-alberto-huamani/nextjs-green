@@ -152,17 +152,17 @@ class PerfilNav extends Component {
       fetch(`/api/addFriend.js`, options)
         .then(res => res.json())
         .then(res => {
-          this.setState({ reqFriend: res });
+          this.setState({ friends: res });
         })
     }
     if (action === 'rm') {
       fetch(`/api/rmFriend.js`, options)
         .then(res => res.text())
         .then(res => {
-          const elements = friendReq.map((item) => {
+          const elements = reqFriend.map((item) => {
             return item.id !== res;
           });
-          this.setState({ friendReq: elements });
+          this.setState({ reqFriend: elements });
         });
     }
   }

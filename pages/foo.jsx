@@ -18,7 +18,7 @@ class Foo extends Component{
     });
     const channel = pusher.subscribe('push');
     channel.bind('my-push', (data) => {
-      console.log(data);
+      this.setState({ api: data.message })
     })
   }
 

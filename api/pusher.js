@@ -1,5 +1,6 @@
 const app = require('./util/app');
 const Pusher = require('pusher');
+const fetch = require('isomorphic-unfetch');
 const axios = require('axios');
 
 var pusher = new Pusher({
@@ -12,9 +13,9 @@ var pusher = new Pusher({
 
 app.get('*', async (req, res) => {
   const resp = await pusher.trigger('push', 'my-push', {"message": "hello world"});
-  res.status(200).send();
+  res.status(200).send("solicitud recibida");
 })
 
-app.listen(4000, console.log('server on'));
+//app.listen(4000, console.log('server on'));
 
-module.exports = app;
+module.exports = app; 

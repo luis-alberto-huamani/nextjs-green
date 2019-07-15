@@ -11,9 +11,11 @@ var pusher = new Pusher({
   encrypted: true
 });
 
-app.get('*', async (req, res) => {
-  const resp = await pusher.trigger('push', 'my-push', {"message": "hello world"});
-  res.status(200).send("solicitud recibida");
+app.get('*', (req, res) => {
+  pusher.trigger('push', 'my-push', {"message": "hello world"});
+  setTimeout(()=> {
+    res.status(200).send('solicitud recibida');
+  }, 5000);
 })
 
 //app.listen(4000, console.log('server on'));

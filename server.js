@@ -1,95 +1,68 @@
-const app = require('./util/app');
+const app = require('./api/util/app');
 const cloudinary = require('cloudinary').v2;
 const dotenv = require('dotenv');
-const UserSchema = require('../models/user');
-const mongooseConnect = require('./util/mongoose');
+const UserSchema = require('./models/user');
+const mongooseConnect = require('./api/util/mongoose');
+const persons = require('./test/persons');
+const FriendReq = require('./utils/classes/friend-req');
 dotenv.config();
 
 [...mongooseConnect];
 
-cloudinary.config({
+/*cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.API_KEY,
   api_secret: process.env.API_SECRET
-});
+});*/
 
-app.post('/api/registro', async (req, res) => {
-  const { mail, pass } = req.body;
-  console.log(req.body);
-  const newUser = new UserSchema({mail, pass});
-  console.log(newUser);
-  const isRegistred = await UserSchema.findOne({ mail: req.body.mail });
-  console.log(isRegistred);
-  if (isRegistred) {
-    res.status(400).send();
-  } else {
-    const user = await newUser.save();
-    console.log(user);
-    res.status(201).send(user.id);
-  }
-
-});
-
-app.post('/api/postregistro', async (req, res) => {
-  const {
-    id,
-    name,
-    lastName,
-    perfilImg,
-    history,
-    birthday,
-    interest,
-    frontPageImg,
-    frontPageQuote,
-  } = req.body;
-  try {
-    const cloudPerfilImg = await cloudinary.uploader.upload(perfilImg, (err, result) => {
-      if (err) console.log(err);
-      return result;
-    });
-    const cloudFrontImg = await cloudinary.uploader.upload(frontPageImg, (err, result) => {
-      if (err) console.log(err);
-      return result;
-    });
-    const perfilUpdated = await UserSchema.findByIdAndUpdate(id, {
-      name,
-      lastName,
-      birthday,
-      history,
-      interest,
-      perfilImg: cloudPerfilImg.url,
-      frontPageImg: cloudFrontImg.url,
-      frontPageQuote,
-    });
-    if (perfilUpdated) {
-      res.status(201).json(perfilUpdated);
-    } else {
-      res.status(500).send();
+app.get('/agregar', async (req, res) => {
+try{
+  persons.forEach( async (person) => {
+    try{
+      const addPerson = new UserSchema(person);
+      const add = await addPerson.save();
+      console.log(add.fullname);
+    } catch (err) {
+      console.log(err);
     }
-  } catch(err) {
-    console.log(err);
-  }
+  })
+  res.status(200).send("Agregados");
+} catch (err) {
+  console.log(err);
+}
 });
 
-app.get('/api/perfil/:id', async (req, res) => {
-  const { id } = req.params;
-  console.log('id');
-  const user = await UserSchema.findById(id);
-  if (user) {
-    res.status(200).json(user);
-  } else {
-    res.status(400).send();
+app.get('/add/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const newRequest = await UserSchema.findById(id);
+    const newFriend = {
+      url: newRequest.url,
+      fullName: newRequest.fullname,
+      perfilImg: newRequest.perfilImg,
+      frontPageQuote: newRequest.frontPageQuote,
+    }
+    const friendRequest = new FriendReq(newFriend);
+    res.status(200).json(friendRequest);
+  } catch(err) {
+    res.status(501).send(err);
   }
 })
 
-app.post('/api/foo', async (req, res) => {
-  const img = req.body.img;
-  const name = req.body.name;
-  const url = await cloudinary.uploader.upload(img, (error, result) => {
-    return result;
-  });
-  console.log(url.url);
-  res.status(201).send(url.url);
-});
+app.get('/buscar/:id', (req, res) => {
+  const person = new UserSchema(persons[0]);
+  console.log(person.url);
+  res.status(200).send(person.url);
+})
+/**app.get('/buscar/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const resp = await UserSchema.findById(id);
+    res.status(200).send(resp.virtual);
+  } catch (err) {
+    res.status(501).send(err);
+  }
+}) */
 
-app.listen(4000);
+app.listen(4000, console.log('server on!'));
+

@@ -10,9 +10,9 @@ var pusher = new Pusher({
   encrypted: true
 });
 
-app.get('*', (req, res) => {
-  pusher.trigger('push', 'my-push', {"message": "hello world"});
-  res.status(200).send('hey');
+app.get('*', async (req, res) => {
+  const resp = await pusher.trigger('push', 'my-push', {"message": "hello world"});
+  res.status(200).send();
 })
 
-app.listen();
+app.listen(4000, console.log('server on'));

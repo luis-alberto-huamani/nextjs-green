@@ -31,9 +31,6 @@ class CardPost extends Component {
     return false;
   }*/
 
-  componentDidMount() {
-    console.log(this.props);
-  }
 
   handleLike() {
     const { myLike, likes } = this.state;
@@ -58,7 +55,6 @@ class CardPost extends Component {
     const {
       posts
     } = this.props;
-    console.log(`antes del render ${posts}`);
     return(
       posts.map((post) => (
         <div className="card_post shadow animated fadeIn">

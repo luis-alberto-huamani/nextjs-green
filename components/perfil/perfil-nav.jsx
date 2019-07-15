@@ -11,15 +11,13 @@ import {
   NavLink,
   Row,
   Col,
-  Card,
-  CardBody,
 } from 'reactstrap';
 import classnames from 'classnames';
 import AddPost from './add-post';
 import './perfil-nav.scss';
 import Friends from './friends';
 
-const users = [
+/*const users = [
   {
     name: 'jhon',
     lastName: 'ebrio',
@@ -44,7 +42,7 @@ const users = [
     perfilImg: '/static/friend-4.jpg',
     frontPageQuote: 'No tengo nada que decir, solo entre aqui a subir mis videos para ganar greencoins'
   }
-];
+];*/
 
 class PerfilNav extends Component {
   constructor(props) {
@@ -188,7 +186,6 @@ class PerfilNav extends Component {
           <TabPane tabId='1'>
             <Row>
               <Col sm="12">
-                <a href="http://localhost:3000/perfil?id=5d28ddcd08ad141c6d74e781">GreenQueen</a>
                 {
                   currentUser === user._id && (
                     <div>
@@ -226,7 +223,7 @@ class PerfilNav extends Component {
                 <div className="friends_main_cont">
                   {
                     <Friends 
-                      users={users}
+                      users={reqFriend}
                     />
                   }                
                 </div>

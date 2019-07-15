@@ -6,6 +6,9 @@ import { validateEmail, validateEmpty } from '../../utils/functions';
 import Fail from './fail';
 import Spinner from '../spinner/spinner';
 import Router from 'next/router';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { onUser, userAction } from '../../store/actions';
 
 class Login extends Component {
   constructor(props){
@@ -44,6 +47,7 @@ class Login extends Component {
 
   onSubmit(e) {
     const { mail, pass } = this.state;
+    const { onUser } = this.props;
     e.preventDefault();
     if (!validateEmail(mail)) {
       this.setState({ mailPop: true });
@@ -55,7 +59,8 @@ class Login extends Component {
         mail: mail,
         pass: pass,
       }
-      fetch('/api/login.js', {
+      //fetch('/api/login.js', {
+      fetch('http://localhost:4000/api/login', {
         headers: { "Content-Type": "application/json" },
         method: "POST",
         body: JSON.stringify(data),
@@ -63,10 +68,15 @@ class Login extends Component {
         .then(res => {
           if (res.status === 201) {
             this.setState({ spinner: false, login: true });
-            res.text()
+            res.json()
               .then(resp => {
-                localStorage.setItem('id', resp);
-                Router.push(`/perfil?id=${resp}`);
+                localStorage.setItem('id', resp._id);
+                const payload = {
+                  action: userAction.LOG_IN,
+                  data: resp,
+                }
+                onUser(payload);
+                Router.push(`/perfil?id=${resp._id}`);
               })
           } else {
               this.setState({ fail: true, login: false, spinner: false });
@@ -150,4 +160,7 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapStateToProps = state => ({ userStore: state.user });
+const mapDispatchToProps = dispatch => bindActionCreators({ onUser }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

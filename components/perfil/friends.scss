@@ -33,11 +33,11 @@
     p{
       margin: 0;
     }
-    p:nth-child(1){
+   a{
       color: $sec;
       text-transform: capitalize;
     }
-    p:nth-child(2){
+    p{
       font-size: 14px;
     }
     .person_footer{

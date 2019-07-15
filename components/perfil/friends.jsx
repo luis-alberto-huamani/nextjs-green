@@ -1,7 +1,7 @@
 import './friends.scss';
 
 
-const Person = ({ perfilImg, name, lastName, frontPageQuote, remove, add }) => (
+const Person = ({ perfilImg, name, url, frontPageQuote, remove, add }) => (
   <div className="person_cont">
     <div className="person_header">
       <button onClick={remove} title="Eliminar">X</button>
@@ -9,7 +9,7 @@ const Person = ({ perfilImg, name, lastName, frontPageQuote, remove, add }) => (
     <div className="person_info">
       <img src={perfilImg} className="img-fluid" alt={name}/>
       <div className="person_description">
-        <p>{name}{" "}{lastName}</p>
+        <a href={url}>{name}</a>
         <p>{frontPageQuote}</p>
       </div>
     </div>
@@ -25,8 +25,8 @@ const Friends = ({ users }) => (
     {
       users.map(user => (
         <Person 
-        name={user.name}
-        lastName={user.lastName}
+        name={user.fullName}
+        url={user.url}
         perfilImg={user.perfilImg}
         frontPageQuote={user.frontPageQuote}
       />

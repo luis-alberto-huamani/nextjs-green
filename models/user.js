@@ -17,11 +17,19 @@ const UserSchema = new Schema({
   friends: Array,
   friendReq: Array,
   gifts: { type: Number, default: 10 },
-  comments: { type: Number, default: 5 }
+  comments: Array,
 });
 
 UserSchema
+  .virtual('fullname')
+    .get(function(){
+      return this.name + " " + this.lastName;
+    });
+
+UserSchema
   .virtual('url')
-  .get(() => "/perfil/" + this._id);
+    .get(function(){
+      return '/perfil?id=' + this.id;
+    });
 
 module.exports = mongoose.model('User', UserSchema);

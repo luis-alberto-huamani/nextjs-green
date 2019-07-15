@@ -15,4 +15,4 @@ app.post('*', async (req, res) => {
 //app.listen(4000, console.log('server on'));
 module.exports = app;
 
-//curl -d '{"productId": "123456", "userId": "789456", "precio": "500gc"}' -H "Content-Type: application/json" -X POST https://nextjs-green.now.sh/api/machine.ks
+//curl -d '{"productId": "123456", "userId": "789456", "precio": "500gc"}' -H "Content-Type: application/json" -X POST https://nextjs-green.now.sh/api/machine.js

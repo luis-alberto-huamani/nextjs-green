@@ -11,8 +11,7 @@ app.post('*', async (req, res) => {
   res.status(200).send(`la transaccion del producto ${productId} con precio ${precio} del usuario ${userId} ha sido completada exitosamente`);
 });
 
-
-//app.listen(4000, console.log('server on'));
 module.exports = app;
 
 //curl -d '{"productId": "123456", "userId": "789456", "precio": "500gc"}' -H "Content-Type: application/json" -X POST https://nextjs-green.now.sh/api/machine.js
+//app.listen(4000, console.log('server on'));

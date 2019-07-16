@@ -1,68 +1,131 @@
-const app = require('./api/util/app');
-const cloudinary = require('cloudinary').v2;
-const dotenv = require('dotenv');
+const next = require('next')
+const port = parseInt(process.env.PORT, 10) || 3000
+const dev = process.env.NODE_ENV !== 'production'
+const app = next({ dev })
+const handle = app.getRequestHandler()
+const server = require('./api/util/app');
+const mongoose = require('./api/util/mongoose');
 const UserSchema = require('./models/user');
-const mongooseConnect = require('./api/util/mongoose');
-const persons = require('./test/persons');
 const FriendReq = require('./utils/classes/friend-req');
-dotenv.config();
 
-[...mongooseConnect];
+app.prepare().then(() => {
+  
+  [...mongoose]
+  
+  server.post('/api/login.js', async (req, res) => {
+    const user = req.body;
+    const validateUser = await UserSchema.findOne({ mail: user.mail, pass: user.pass });
+    if (validateUser) {
+      res.status(201).send(validateUser.id);
+    } else {
+      res.status(400).send();
+    }
+  
+  });
 
-/*cloudinary.config({
-  cloud_name: process.env.CLOUD_NAME,
-  api_key: process.env.API_KEY,
-  api_secret: process.env.API_SECRET
-});*/
+  server.get('/api/perfil.js', async (req, res) => {
+    const { id } = req.query;
+    const user = await UserSchema.findById(id);
+    console.log(id);
+    if (user) {
+      console.log(user);
+      res.status(200).json(user);
+    } else {
+      res.status(400).send();
+    }
+  });
 
-app.get('/agregar', async (req, res) => {
-try{
-  persons.forEach( async (person) => {
-    try{
-      const addPerson = new UserSchema(person);
-      const add = await addPerson.save();
-      console.log(add.fullname);
+  server.get('/api/notifications.js', async (req, res) => {
+    try {
+      const { id } = req.query;
+      const userInfo = await UserSchema.findById(id);
+      const notifications = {
+        heart: userInfo.comments,
+        friendReq: userInfo.friendReq,
+        gifts: userInfo.gifts,
+      }
+      res.status(200).json(notifications);
     } catch (err) {
       console.log(err);
+      res.status(501).send(err);
     }
   })
-  res.status(200).send("Agregados");
-} catch (err) {
-  console.log(err);
-}
-});
 
-app.get('/add/:id', async (req, res) => {
-  try {
-    const { id } = req.params;
-    const newRequest = await UserSchema.findById(id);
-    const newFriend = {
-      url: newRequest.url,
-      fullName: newRequest.fullname,
-      perfilImg: newRequest.perfilImg,
-      frontPageQuote: newRequest.frontPageQuote,
+  server.post('/api/friendRequest.js', async (req, res) => {
+    try {
+      const { currentUser, targetUser } = req.body;
+      const newRequest = await UserSchema.findById(currentUser);
+      const newFriend = {
+        id: currentUser,
+        url: newRequest.url,
+        fullName: newRequest.fullname,
+        perfilImg: newRequest.perfilImg,
+        frontPageQuote: newRequest.frontPageQuote,
+      };
+      const friendRequest = new FriendReq(newFriend);
+      await UserSchema.findByIdAndUpdate(targetUser, {
+        $push: {
+          friendReq: {
+            $each: [friendRequest],
+            $position: 0
+          }
+        }
+      });
+      res.status(200).send();
+    } catch (err) {
+      console.log(err);
+      res.status(501).send();
     }
-    const friendRequest = new FriendReq(newFriend);
-    res.status(200).json(friendRequest);
-  } catch(err) {
-    res.status(501).send(err);
-  }
+  });
+  
+  server.post('/api/addFriend.js', async (req, res) => {
+    try {
+      const { currentUser, targetUser } = req.body;
+      const deleted = await UserSchema.findByIdAndUpdate(currentUser, {
+        $pull: {
+          friendReq: {
+            id: targetUser,
+          }
+        }
+      });
+      const newFriend = await deleted.friendReq.find((item) => {
+        return item.id === targetUser;
+      })
+      await UserSchema.findByIdAndUpdate(currentUser, {
+        $push:{
+          friends: newFriend,
+        }
+      });
+      res.status(200).send();
+    } catch (err) {
+      res.status(501).send(err);
+    }
+  })
+  
+  server.post('/api/rmFriend.js', async (req, res) => {
+    try {
+      const { currentUser, targetUser } = req.body;
+      await UserSchema.findByIdAndUpdate(currentUser, {
+        $pull: {
+          friendReq: {
+            id: targetUser
+          }
+        }
+      });
+      res.status(200).send();
+    } catch (err) {
+      console.log(err);
+      res.status(501).send(err);
+    }
+  })
+  
+
+  server.get('*', (req, res) => {
+    return handle(req, res)
+  })
+
+  server.listen(port, err => {
+    if (err) throw err
+    console.log(`> Ready on http://localhost:${port}`)
+  })
 })
-
-app.get('/buscar/:id', (req, res) => {
-  const person = new UserSchema(persons[0]);
-  console.log(person.url);
-  res.status(200).send(person.url);
-})
-/**app.get('/buscar/:id', async (req, res) => {
-  try {
-    const { id } = req.params;
-    const resp = await UserSchema.findById(id);
-    res.status(200).send(resp.virtual);
-  } catch (err) {
-    res.status(501).send(err);
-  }
-}) */
-
-app.listen(4000, console.log('server on!'));
-

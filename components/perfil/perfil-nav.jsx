@@ -18,32 +18,39 @@ import AddPost from './add-post';
 import './perfil-nav.scss';
 import Friends from './friends';
 import uuid from 'uuid/v1';
-/*const users = [
+const myUsers = [
   {
-    name: 'jhon',
-    lastName: 'ebrio',
+    id: '1234561',
+    url:'/kadkans',
+    fullName: 'jhon',
     perfilImg: '/static/friend-1.jpg',
     frontPageQuote: 'Debemos cuidar el mundo, yo siemre reciclo mis latas de cerveza'
   },
   {
-    name: 'sacha',
-    lastName: 'gray',
+    id: '1234562',
+    url:'/kadkans',
+    fullName: 'sacha',
     perfilImg: '/static/friend-2.jpg',
     frontPageQuote: 'En el set de grabacion todos los condones se reciclan'
   },
   {
-    name: 'rachel',
-    lastName: 'star',
+    id: '1234563',
+    url:'/kadkans',
+    fullName: 'rachel',
     perfilImg: '/static/friend-3.jpg',
     frontPageQuote: 'Debemos cuidar nuestras playas para evitar el sifilis'
-  },
+  }
+];
+
+const myFriends = [
   {
-    name: 'mia',
-    lastName: 'kalifa',
+    id: '1234564',
+    url:'/kadkans',
+    fullName: 'mia',
     perfilImg: '/static/friend-4.jpg',
     frontPageQuote: 'No tengo nada que decir, solo entre aqui a subir mis videos para ganar greencoins'
   }
-];*/
+]
 
 class PerfilNav extends Component {
   constructor(props) {
@@ -65,14 +72,11 @@ class PerfilNav extends Component {
     this.handleFriend = this.handleFriend.bind(this);
   }
 
-  componentWillMount() {
-    const { posts, user } = this.props;
-    this.setState({ posts: posts, reqFriend: user.friendReq, friends: user.friends });
-  }
-
   componentDidMount() {
+    const { posts, user } = this.props;
     const currentUser = localStorage.getItem('id');
-    this.setState({ currentUser });
+    this.setState({ currentUser, posts: posts, reqFriend: user.friendReq, friends: user.friends });
+    //this.setState({ currentUser, posts: posts, reqFriend: myUsers, friends: myFriends });
   }
 
   onToggle(tab) {
@@ -136,7 +140,7 @@ class PerfilNav extends Component {
   }
 
   handleFriend(action, id) {
-    const { reqFriend } = this.state;
+    const { reqFriend, friends } = this.state;
     const currentUser = localStorage.getItem('id');
     const targetUser = id;
     const data = {
@@ -150,22 +154,27 @@ class PerfilNav extends Component {
     }
     if (action === 'add') {
       fetch(`/api/addFriend.js`, options)
-        .then(res => res.json())
         .then(res => {
-          console.log(res)
-          this.setState({ friends: res });
+          if (res.status === 200) {
+            const newReqFriends = reqFriend.filter((item) => item.id !== id);
+            const newFriend = reqFriend.find((item) => item.id === id);
+            this.setState({ reqFriend: newReqFriends, friends: [newFriend, ...friends] });
+          }
         })
+        /*const newReqFriends = reqFriend.filter((item) => item.id !== id);
+        const newFriend = reqFriend.find((item) => item.id === id);
+        this.setState({ reqFriend: newReqFriends, friends: [newFriend, ...friends] });*/
     }
     if (action === 'rm') {
       fetch(`/api/rmFriend.js`, options)
-        .then(res => res.text())
         .then(res => {
-          const elements = reqFriend.map((item) => {
-            return item.id !== res;
-          });
-          console.log(res)
-          this.setState({ reqFriend: elements });
-        });
+          if (res.status === 200) {
+            const newReqFriends = reqFriend.filter((item) => item.id !== id);
+            this.setState({ reqFriend: newReqFriends });
+          }
+        })
+        //const newReqFriends = reqFriend.filter((item) => item.id !== id);
+        //this.setState({ reqFriend: newReqFriends });
     }
   }
   
@@ -280,7 +289,7 @@ class PerfilNav extends Component {
                         </a>
                       </li>
                     ))
-                  }
+                    }
                 </ul>
               </Col>
               <Col sm="6">

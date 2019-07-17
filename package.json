@@ -1,11 +1,11 @@
 {
   "private": true,
   "scripts": {
+    "start": "node server.js",
     "dev": "next",
     "nodev": "nodemon next",
     "build": "next build",
-    "now-build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "now-build": "next build"
   },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.5.4",

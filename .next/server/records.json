@@ -23,14 +23,14 @@
   },
   "chunks": {
     "byName": {
-      "static/Vyb7-OZynJD95dn-l_BZQ/pages/_app.js": 0,
-      "static/Vyb7-OZynJD95dn-l_BZQ/pages/_document.js": 1,
-      "static/Vyb7-OZynJD95dn-l_BZQ/pages/_error.js": 2,
-      "static/Vyb7-OZynJD95dn-l_BZQ/pages/foo.js": 3,
-      "static/Vyb7-OZynJD95dn-l_BZQ/pages/index.js": 4,
-      "static/Vyb7-OZynJD95dn-l_BZQ/pages/login.js": 5,
-      "static/Vyb7-OZynJD95dn-l_BZQ/pages/perfil.js": 6,
-      "static/Vyb7-OZynJD95dn-l_BZQ/pages/postregistro.js": 7
+      "static/f1wyiwe3YIWT6NK5OzG0t/pages/_app.js": 0,
+      "static/f1wyiwe3YIWT6NK5OzG0t/pages/_document.js": 1,
+      "static/f1wyiwe3YIWT6NK5OzG0t/pages/_error.js": 2,
+      "static/f1wyiwe3YIWT6NK5OzG0t/pages/foo.js": 3,
+      "static/f1wyiwe3YIWT6NK5OzG0t/pages/index.js": 4,
+      "static/f1wyiwe3YIWT6NK5OzG0t/pages/login.js": 5,
+      "static/f1wyiwe3YIWT6NK5OzG0t/pages/perfil.js": 6,
+      "static/f1wyiwe3YIWT6NK5OzG0t/pages/postregistro.js": 7
     },
     "bySource": {},
     "usedIds": [

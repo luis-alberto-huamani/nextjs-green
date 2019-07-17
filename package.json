@@ -5,7 +5,7 @@
     "nodev": "nodemon next",
     "build": "next build",
     "now-build": "next build",
-    "start": "NODE_ENV=production nodemon server.js"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.5.4",

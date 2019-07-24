@@ -4188,7 +4188,7 @@ function () {
             query = _ref2.query;
             id = query.id;
             _context.next = 4;
-            return external_isomorphic_unfetch_default()("http://localhost:4000/api/perfil.js?id=".concat(id));
+            return external_isomorphic_unfetch_default()("/api/perfil.js?id=".concat(id));
 
           case 4:
             res = _context.sent;

@@ -11,6 +11,19 @@ const FriendReq = require('./utils/classes/friend-req');
 app.prepare().then(() => {
   
   [...mongoose]
+
+  server.post('/api/registro.js', async (req, res) => {
+    const { mail, pass } = req.body;
+    const newUser = new UserSchema({ mail, pass });
+    const isRegistred = await UserSchema.findOne({ mail });
+    if (isRegistred) {
+      res.status(400).send();
+    } else {
+      const user = await newUser.save();
+      res.status(201).send(user.id);
+    }
+  
+  });   
   
   server.post('/api/login.js', async (req, res) => {
     const user = req.body;
@@ -22,6 +35,12 @@ app.prepare().then(() => {
     }
   
   });
+
+  server.get('/foo/:id', async (req, res) => {
+    const user = await UserSchema.findById(req.params.id);
+    console.log(user);
+    app.render(req, res, '/foo', { name: user.name });
+  })
 
   server.get('/api/perfil.js', async (req, res) => {
     const { id } = req.query;

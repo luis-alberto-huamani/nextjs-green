@@ -2,8 +2,24 @@ import React, { Component } from 'react';
 import '../components/perfil/friends.scss';
 import Pusher from 'pusher-js';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
-class Foo extends Component{
+const Foo = ({ name }) => {
+  //const router = useRouter();
+  return(
+    <div>
+      <h1>{name}</h1>
+      {console.log(name)}
+    </div>
+  )
+}
+
+Foo.getInitialProps = ({ query }) => {
+  const { name } = query;
+  return { name };
+}
+
+/*class Foo extends Component{
   constructor(props){
   super(props);
   this.state = {
@@ -30,6 +46,6 @@ class Foo extends Component{
       </div>
     );
   }
-}
+}*/
 
 export default Foo;

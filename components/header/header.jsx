@@ -58,7 +58,7 @@ class Header extends Component{
         });
     }
     window.onscroll = () => {
-      if(window.scrollY > 50) {
+      if(window.scrollY > 30) {
         this.setState({ down: true });
       } else {
         this.setState({ down: false });

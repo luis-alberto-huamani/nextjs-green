@@ -43,3 +43,27 @@
     transform: scale(.95);
   }
 }
+
+.serachBar_cont{
+  input{
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 3px;
+    font-size: 14px;
+    border: 2px solid $prim;
+    position: relative;
+    width: 200px;
+    &:focus{
+      outline: $sec;
+    }
+  }
+}
+.lookup_cont{
+  background: #fff;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: absolute;
+  width: 200px;
+  font-size: 14px;
+}

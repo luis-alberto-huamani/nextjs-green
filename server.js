@@ -4,6 +4,7 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 const server = require('./api/util/app');
+const redis = require('redis');
 const mongoose = require('./api/util/mongoose');
 const UserSchema = require('./models/user');
 const FriendReq = require('./utils/classes/friend-req');
@@ -11,6 +12,48 @@ const FriendReq = require('./utils/classes/friend-req');
 app.prepare().then(() => {
   
   [...mongoose]
+  
+  const client = redis.createClient();
+  client.on('connect', () => console.log(`redis on`));
+
+  UserSchema.find({}).then((bdUsers) => {
+    const redisUsers = bdUsers.map((user) => {
+      const redisUser = {
+        url: user.url,
+        fullName: user.fullname,
+        perfilImg: user.perfilImg,
+      }
+      return redisUser;
+    })
+    client.set('users', JSON.stringify(redisUsers));
+  }).catch(err => console.log(err));
+
+  server.get('/api/search/:name', (req, res) => {
+    const { name } = req.params;
+    client.get('users', (err, users) => {
+      if (err) {
+        res.status(501).send(err);
+      };
+      if(!users) {
+        UserSchema.find({}).then((bdUsers) => {
+          const redisUsers = bdUsers.map((user) => {
+            const redisUser = {
+              url: user.url,
+              fullName: user.fullname,
+              perfilImg: user.perfilImg,
+            }
+            return redisUser;
+          })
+          client.set('users', JSON.stringify(redisUsers));
+        }).catch(err => console.log(err));
+      }
+      const toSearch = JSON.parse(users);
+      const suggest = toSearch.filter((user) => {
+        return user.fullName.toLocaleLowerCase().indexOf(name.toLocaleLowerCase()) > -1;
+      });
+      res.status(200).json(suggest);
+    })
+  })
 
   server.post('/api/registro.js', async (req, res) => {
     const { mail, pass } = req.body;
@@ -38,16 +81,13 @@ app.prepare().then(() => {
 
   server.get('/foo/:id', async (req, res) => {
     const user = await UserSchema.findById(req.params.id);
-    console.log(user);
     app.render(req, res, '/foo', { name: user.name });
   })
 
   server.get('/api/perfil.js', async (req, res) => {
     const { id } = req.query;
     const user = await UserSchema.findById(id);
-    console.log(id);
     if (user) {
-      console.log(user);
       res.status(200).json(user);
     } else {
       res.status(400).send();
@@ -58,10 +98,12 @@ app.prepare().then(() => {
     try {
       const { id } = req.query;
       const userInfo = await UserSchema.findById(id);
+      const toSearchBar = [...userInfo.friends, ...userInfo.friendReq];
       const notifications = {
         heart: userInfo.comments,
         friendReq: userInfo.friendReq,
         gifts: userInfo.gifts,
+        searchBar: toSearchBar,
       }
       res.status(200).json(notifications);
     } catch (err) {

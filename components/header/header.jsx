@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { onNav, onLogin } from '../../store/actions';
 import { color } from '../btn-resp/css-layout';
+import uuid from 'uuid/v1';
 
 const iconBars = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -37,13 +38,16 @@ class Header extends Component{
   constructor(props){
     super(props);
     this.state = {
+      isLogin: true,
       down: false,
       notifications: {
         heart: 1,
         gifts: 2,
-        friendReq: [1,2]
+        friendReq: [1,2],
       },
+      lookup: [],
     }
+    this.onSearch = this.onSearch.bind(this);
   }
 
   componentDidMount() {
@@ -66,8 +70,18 @@ class Header extends Component{
     }
   }
 
+  onSearch(e) {
+    const { searchBar } = this.state.notifications;
+    const userInput = e.target.value;
+    if(userInput) {
+      fetch(`/api/search/${userInput}`).then(res => res.json()).then(res => this.setState({ lookup: res }));
+    } else {
+      this.setState({ lookup: [] });
+    }
+  }
+
   render(){
-    const { down, notifications } = this.state;
+    const { down, notifications, lookup } = this.state;
     const { isLogin } = this.props;
     return(
       <header className={classnames({
@@ -75,8 +89,29 @@ class Header extends Component{
         header_hero_main: true,
         shadow: down,
       })}>
+
         <div className="container-fluid header_main_cont animated fadeInDown">
           <Logo />
+          {
+            isLogin && (
+              <div className="serachBar_cont">
+                <input
+                  type="text"
+                  placeholder="Buscar"
+                  onChange={this.onSearch}
+                />
+                {
+                  lookup.length > 0 && (
+                    <ul className="lookup_cont">
+                      {
+                        lookup.map(item => <li key={uuid()}><Link href={item.url}><a>{item.fullName}</a></Link></li>)
+                      }
+                    </ul>
+                  )
+                }
+              </div>
+            )
+          }
           <nav>
             {
               isLogin 

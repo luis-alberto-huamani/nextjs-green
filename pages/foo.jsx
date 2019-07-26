@@ -1,51 +1,76 @@
 import React, { Component } from 'react';
-import '../components/perfil/friends.scss';
-import Pusher from 'pusher-js';
-import axios from 'axios';
-import { useRouter } from 'next/router';
+import Layout from '../components/layout/layout';
 
-const Foo = ({ name }) => {
-  //const router = useRouter();
-  return(
-    <div>
-      <h1>{name}</h1>
-      {console.log(name)}
-    </div>
-  )
-}
+const myUsers = [
+  {
+    id: '1234561',
+    url:'/kadkans',
+    fullName: 'jhon doe',
+    perfilImg: '/static/friend-1.jpg',
+    frontPageQuote: 'Debemos cuidar el mundo, yo siemre reciclo mis latas de cerveza'
+  },
+  {
+    id: '1234562',
+    url:'/kadkans',
+    fullName: 'sacha gray',
+    perfilImg: '/static/friend-2.jpg',
+    frontPageQuote: 'En el set de grabacion todos los condones se reciclan'
+  },
+  {
+    id: '1234563',
+    url:'/kadkans',
+    fullName: 'rachel star',
+    perfilImg: '/static/friend-3.jpg',
+    frontPageQuote: 'Debemos cuidar nuestras playas para evitar el sifilis'
+  }
+];
 
-Foo.getInitialProps = ({ query }) => {
-  const { name } = query;
-  return { name };
-}
 
 /*class Foo extends Component{
   constructor(props){
-  super(props);
-  this.state = {
-    api: '',
+    super(props);
+    this.state = {
+      suggestion: [],
+      input: '',
+    }
+    this.onChange = this.onChange.bind(this);
   }
-}
 
-  componentDidMount() {
-    const { api } = this.state;
-    const pusher = new Pusher('bfb62abbe03a8b1e8c89', {
-      cluster: 'us2',
-    });
-    const channel = pusher.subscribe('push');
-    channel.bind('my-push', (data) => {
-      this.setState({ api: data.message })
-    })
+  onChange(e) {
+    const { input, suggestion } = this.state;
+    const usrInput = e.target.value;
+    let mySuggestion = [];
+    if (usrInput) {
+      mySuggestion = myUsers.filter((item) => {
+        return item.fullName.indexOf(usrInput) > -1;
+      });
+    }
+    this.setState({ suggestion: [...mySuggestion] });
+    console.log(mySuggestion);
   }
 
   render() {
-    const { api } = this.state;
-    return(
+    const {
+      suggestion,
+      input,
+    } = this.state
+    return (
       <div>
-        
+        <input onChange={this.onChange} type="text"/>
+        <ul>
+          {
+            suggestion.map(item => <li>{item.fullName}</li>)
+          }
+        </ul>
       </div>
     );
   }
 }*/
+
+const Foo = () => (
+  <Layout>
+
+  </Layout>
+)
 
 export default Foo;

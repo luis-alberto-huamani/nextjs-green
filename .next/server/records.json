@@ -1,0 +1,55 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "multi private-next-pages/_app.js": 0,
+      "multi private-next-pages/foo.jsx": 1,
+      "multi private-next-pages/index.js": 2,
+      "multi private-next-pages/login.js": 3,
+      "multi private-next-pages/perfil.js": 4,
+      "multi private-next-pages/postregistro.jsx": 5,
+      "multi private-next-pages/queryStringExample.jsx": 6,
+      "multi private-next-pages/wall.jsx": 7,
+      "multi next/dist/pages/_error": 8,
+      "multi next/dist/pages/_document": 9
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9
+    }
+  },
+  "chunks": {
+    "byName": {
+      "static/kFPEDCvJ4q6_P19w2oznM/pages/_app.js": 0,
+      "static/kFPEDCvJ4q6_P19w2oznM/pages/_document.js": 1,
+      "static/kFPEDCvJ4q6_P19w2oznM/pages/_error.js": 2,
+      "static/kFPEDCvJ4q6_P19w2oznM/pages/foo.js": 3,
+      "static/kFPEDCvJ4q6_P19w2oznM/pages/index.js": 4,
+      "static/kFPEDCvJ4q6_P19w2oznM/pages/login.js": 5,
+      "static/kFPEDCvJ4q6_P19w2oznM/pages/perfil.js": 6,
+      "static/kFPEDCvJ4q6_P19w2oznM/pages/postregistro.js": 7,
+      "static/kFPEDCvJ4q6_P19w2oznM/pages/queryStringExample.js": 8,
+      "static/kFPEDCvJ4q6_P19w2oznM/pages/wall.js": 9
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  }
+}

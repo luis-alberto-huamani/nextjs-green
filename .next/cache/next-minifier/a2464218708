@@ -1,0 +1,1 @@
+{"code":"(window.webpackJsonp=window.webpackJsonp||[]).push([[15],{tLCo:function(n,t,o){\"use strict\";o.r(t);var e=o(\"q1tI\"),u=o.n(e),w=o(\"ZTmz\");t.default=function(){return u.a.createElement(w.a,null)}},vwVf:function(n,t,o){(window.__NEXT_P=window.__NEXT_P||[]).push([\"/foo\",function(){var n=o(\"tLCo\");return{page:n.default||n}}])}},[[\"vwVf\",1,0]]]);"}

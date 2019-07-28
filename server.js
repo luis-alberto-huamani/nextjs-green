@@ -12,7 +12,7 @@ const FriendReq = require('./utils/classes/friend-req');
 app.prepare().then(() => {
   
   [...mongoose]
-  const client = redis.createClient(6379, 'green.3j3itc.0001.use2.cache.amazonaws.com');
+  const client = redis.createClient(6379, 'greenredis.3j3itc.0001.use2.cache.amazonaws.com');
   client.on('connect', () => console.log(`redis on`));
 
   UserSchema.find({}).then((bdUsers) => {

@@ -33,23 +33,6 @@
       }
     }
   ],
-  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/explain/explain.scss": [
-    {
-      "modules": {
-        "byIdentifier": {},
-        "usedIds": {}
-      },
-      "chunks": {
-        "byName": {
-          "mini-css-extract-plugin": 0
-        },
-        "bySource": {},
-        "usedIds": [
-          0
-        ]
-      }
-    }
-  ],
   "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/about/about.scss": [
     {
       "modules": {
@@ -84,7 +67,7 @@
       }
     }
   ],
-  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/wall/main.scss": [
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!layout/base.scss": [
     {
       "modules": {
         "byIdentifier": {},
@@ -102,6 +85,23 @@
     }
   ],
   "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/postregistro/body.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/wall/main.scss": [
     {
       "modules": {
         "byIdentifier": {},
@@ -152,41 +152,7 @@
       }
     }
   ],
-  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!layout/base.scss": [
-    {
-      "modules": {
-        "byIdentifier": {},
-        "usedIds": {}
-      },
-      "chunks": {
-        "byName": {
-          "mini-css-extract-plugin": 0
-        },
-        "bySource": {},
-        "usedIds": [
-          0
-        ]
-      }
-    }
-  ],
-  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/login/fail.scss": [
-    {
-      "modules": {
-        "byIdentifier": {},
-        "usedIds": {}
-      },
-      "chunks": {
-        "byName": {
-          "mini-css-extract-plugin": 0
-        },
-        "bySource": {},
-        "usedIds": [
-          0
-        ]
-      }
-    }
-  ],
-  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/form/form.scss": [
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/explain/explain.scss": [
     {
       "modules": {
         "byIdentifier": {},
@@ -220,7 +186,7 @@
       }
     }
   ],
-  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/postregistro/step-3.scss": [
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/form/form.scss": [
     {
       "modules": {
         "byIdentifier": {},
@@ -254,6 +220,40 @@
       }
     }
   ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/spinner/spinner.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/logo/logo.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
   "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/perfil/perfil-nav.scss": [
     {
       "modules": {
@@ -271,7 +271,7 @@
       }
     }
   ],
-  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/postregistro/steps.scss": [
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/logo-2/logo.scss": [
     {
       "modules": {
         "byIdentifier": {},
@@ -288,7 +288,24 @@
       }
     }
   ],
-  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/store/store.scss": [
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/login/fail.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/perfil-header/perfil-header.scss": [
     {
       "modules": {
         "byIdentifier": {},
@@ -339,92 +356,7 @@
       }
     }
   ],
-  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/perfil-header/perfil-header.scss": [
-    {
-      "modules": {
-        "byIdentifier": {},
-        "usedIds": {}
-      },
-      "chunks": {
-        "byName": {
-          "mini-css-extract-plugin": 0
-        },
-        "bySource": {},
-        "usedIds": [
-          0
-        ]
-      }
-    }
-  ],
-  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/header/header.scss": [
-    {
-      "modules": {
-        "byIdentifier": {},
-        "usedIds": {}
-      },
-      "chunks": {
-        "byName": {
-          "mini-css-extract-plugin": 0
-        },
-        "bySource": {},
-        "usedIds": [
-          0
-        ]
-      }
-    }
-  ],
-  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/postregistro/step-1.scss": [
-    {
-      "modules": {
-        "byIdentifier": {},
-        "usedIds": {}
-      },
-      "chunks": {
-        "byName": {
-          "mini-css-extract-plugin": 0
-        },
-        "bySource": {},
-        "usedIds": [
-          0
-        ]
-      }
-    }
-  ],
   "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/postregistro/step-2.scss": [
-    {
-      "modules": {
-        "byIdentifier": {},
-        "usedIds": {}
-      },
-      "chunks": {
-        "byName": {
-          "mini-css-extract-plugin": 0
-        },
-        "bySource": {},
-        "usedIds": [
-          0
-        ]
-      }
-    }
-  ],
-  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/logo-2/logo.scss": [
-    {
-      "modules": {
-        "byIdentifier": {},
-        "usedIds": {}
-      },
-      "chunks": {
-        "byName": {
-          "mini-css-extract-plugin": 0
-        },
-        "bySource": {},
-        "usedIds": [
-          0
-        ]
-      }
-    }
-  ],
-  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/logo/logo.scss": [
     {
       "modules": {
         "byIdentifier": {},
@@ -458,23 +390,6 @@
       }
     }
   ],
-  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/spinner/spinner.scss": [
-    {
-      "modules": {
-        "byIdentifier": {},
-        "usedIds": {}
-      },
-      "chunks": {
-        "byName": {
-          "mini-css-extract-plugin": 0
-        },
-        "bySource": {},
-        "usedIds": [
-          0
-        ]
-      }
-    }
-  ],
   "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/buttons/button.scss": [
     {
       "modules": {
@@ -492,7 +407,109 @@
       }
     }
   ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/postregistro/step-1.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/postregistro/steps.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/postregistro/step-3.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/store/store.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/header/header.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
   "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/hero/register-cont.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/postregistro/perfil-pic.scss": [
     {
       "modules": {
         "byIdentifier": {},
@@ -527,23 +544,6 @@
     }
   ],
   "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/notifications/notifications.scss": [
-    {
-      "modules": {
-        "byIdentifier": {},
-        "usedIds": {}
-      },
-      "chunks": {
-        "byName": {
-          "mini-css-extract-plugin": 0
-        },
-        "bySource": {},
-        "usedIds": [
-          0
-        ]
-      }
-    }
-  ],
-  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/postregistro/perfil-pic.scss": [
     {
       "modules": {
         "byIdentifier": {},
@@ -637,32 +637,41 @@
       "commons": 0,
       "static/runtime/webpack.js": 1,
       "styles": 2,
-      "static/PqCzRIlJQLCjw940M0SSR/pages/_app.js": 3,
-      "static/PqCzRIlJQLCjw940M0SSR/pages/_error.js": 4,
-      "static/PqCzRIlJQLCjw940M0SSR/pages/foo.js": 5,
-      "static/PqCzRIlJQLCjw940M0SSR/pages/index.js": 6,
-      "static/PqCzRIlJQLCjw940M0SSR/pages/login.js": 7,
-      "static/PqCzRIlJQLCjw940M0SSR/pages/perfil.js": 8,
-      "static/PqCzRIlJQLCjw940M0SSR/pages/postregistro.js": 9,
-      "static/PqCzRIlJQLCjw940M0SSR/pages/queryStringExample.js": 10,
-      "static/PqCzRIlJQLCjw940M0SSR/pages/wall.js": 11,
-      "static/runtime/main.js": 12
+      "static/_DqhEsV2do6gvidcgRwc4/pages/_app.js": 3,
+      "static/_DqhEsV2do6gvidcgRwc4/pages/_error.js": 4,
+      "static/_DqhEsV2do6gvidcgRwc4/pages/foo.js": 5,
+      "static/_DqhEsV2do6gvidcgRwc4/pages/index.js": 6,
+      "static/_DqhEsV2do6gvidcgRwc4/pages/login.js": 7,
+      "static/_DqhEsV2do6gvidcgRwc4/pages/perfil.js": 8,
+      "static/_DqhEsV2do6gvidcgRwc4/pages/postregistro.js": 9,
+      "static/_DqhEsV2do6gvidcgRwc4/pages/queryStringExample.js": 10,
+      "static/_DqhEsV2do6gvidcgRwc4/pages/wall.js": 11,
+      "static/runtime/main.js": 12,
+      "static/kCXWgSdAYJKEojUQgC1wC/pages/_app.js": 13,
+      "static/kCXWgSdAYJKEojUQgC1wC/pages/_error.js": 14,
+      "static/kCXWgSdAYJKEojUQgC1wC/pages/foo.js": 15,
+      "static/kCXWgSdAYJKEojUQgC1wC/pages/index.js": 16,
+      "static/kCXWgSdAYJKEojUQgC1wC/pages/login.js": 17,
+      "static/kCXWgSdAYJKEojUQgC1wC/pages/perfil.js": 18,
+      "static/kCXWgSdAYJKEojUQgC1wC/pages/postregistro.js": 19,
+      "static/kCXWgSdAYJKEojUQgC1wC/pages/queryStringExample.js": 20,
+      "static/kCXWgSdAYJKEojUQgC1wC/pages/wall.js": 21
     },
     "bySource": {},
     "usedIds": [
       0,
       1,
-      10,
-      11,
       12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
       2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
+      20,
+      21
     ]
   }
 }

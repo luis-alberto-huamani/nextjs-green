@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import Layout from '../components/layout/layout';
+import './foo.scss';
+import Header from '../components/perf/header';
+import { Modal, ModalBody, ModalHeader, Button } from 'reactstrap';
+import Quote from '../components/perf/quote';
 
 const myUsers = [
   {
@@ -25,52 +29,66 @@ const myUsers = [
   }
 ];
 
+const  person = {
+  mail: 'person4@mail.com',
+  pass: '123456',
+  name: 'thera',
+  lastName: 'earth',
+  fullName: 'thera earth',
+  birthday: '13/07/2019',
+  history: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, nobis! Officiis distinctio in aliquid, deleniti facilis hic animi incidunt ab nulla soluta et unde accusantium expedita sed debitis impedit est!',
+  interest: 'Lorem ipsum dolor sit amet consectetur',
+  perfilImg: '/static/friend-4.jpg',
+  frontPageImg: '/static/hero-0.jpg',
+  frontPageQuote:'-La conservación es un estado de armonía entre hombre y tierra.-Aldo Leopold.',
+  wallet: 500,
+  posts: [],
+  friends: [],
+  friendReq: [],
+  gifts: 10,
+  comments: [],
+};
 
-/*class Foo extends Component{
+class Foo extends Component{
   constructor(props){
     super(props);
     this.state = {
-      suggestion: [],
-      input: '',
+      quote: '',
+      quoteVisible:true,
     }
-    this.onChange = this.onChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.onQuote = this.onQuote.bind(this);
   }
 
-  onChange(e) {
-    const { input, suggestion } = this.state;
-    const usrInput = e.target.value;
-    let mySuggestion = [];
-    if (usrInput) {
-      mySuggestion = myUsers.filter((item) => {
-        return item.fullName.indexOf(usrInput) > -1;
-      });
-    }
-    this.setState({ suggestion: [...mySuggestion] });
-    console.log(mySuggestion);
+  handleChange(e) {
+    this.setState({ [e.target.id]: e.target.value });
+  }
+
+  onQuote() {
+    const { quoteVisible } = this.state;
+    this.setState({ quoteVisible: !quoteVisible });
   }
 
   render() {
-    const {
-      suggestion,
-      input,
-    } = this.state
-    return (
-      <div>
-        <input onChange={this.onChange} type="text"/>
-        <ul>
-          {
-            suggestion.map(item => <li>{item.fullName}</li>)
-          }
-        </ul>
-      </div>
+    const { quoteVisible, quote } = this.state;
+    return(
+      <Layout>
+        <Quote
+          isOpen={quoteVisible}
+          onQuote={this.onQuote}
+          handleChange={this.handleChange}
+          quote={quote}
+        />
+        <Header
+          user={person}
+          action={{
+            onQuote: this.onQuote
+          }}
+        />
+        <div className="void_space"></div>
+      </Layout>
     );
   }
-}*/
-
-const Foo = () => (
-  <Layout>
-
-  </Layout>
-)
+}
 
 export default Foo;

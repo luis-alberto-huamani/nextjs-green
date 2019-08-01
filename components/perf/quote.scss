@@ -1,0 +1,53 @@
+@import '../../layout/variables';
+
+.btn_close{
+  display: flex;
+  justify-content: flex-end;
+  button{
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    color: #333;
+    &:focus{
+      outline: none;
+    }
+    &:hover{
+      color: $sec;
+    }
+  }
+}
+.formQuote{
+  width: 100%;
+  text-align: center;
+  textarea{
+    width: 100%;
+    margin: 0 auto;
+    resize: none;
+    margin: 1rem 0;
+  }
+  .quote_buttons_cont{
+    display: flex;
+    justify-content: flex-end;
+    button{
+      background: $prim;
+      border: 1px solid $prim;
+      color: #fff;
+      font-size: 14px;
+      text-transform: capitalize;
+      margin: 0;
+      &:focus{
+        outline: none;
+      }
+      &:hover{
+        background: $sec;
+      }
+      &:active{
+        background: $prim;
+      }
+    }
+  }
+}
+
+.modal-content{
+  border-radius: 0 !important;
+}

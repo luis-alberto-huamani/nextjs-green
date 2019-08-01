@@ -29,7 +29,7 @@ UserSchema
 UserSchema
   .virtual('url')
     .get(function(){
-      return '/perfil?id=' + this.id;
+      return '/perfil/' + this.id;
     });
 
 module.exports = mongoose.model('User', UserSchema);

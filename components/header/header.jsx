@@ -11,6 +11,7 @@ import { bindActionCreators } from 'redux';
 import { onNav, onLogin } from '../../store/actions';
 import { color } from '../btn-resp/css-layout';
 import uuid from 'uuid/v1';
+import axios from 'axios';
 
 const iconBars = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -40,27 +41,25 @@ class Header extends Component{
     this.state = {
       isLogin: true,
       down: false,
-      notifications: {
-        heart: 1,
-        gifts: 2,
-        friendReq: [1,2],
-      },
+      notifications: {},
       lookup: [],
     }
     this.onSearch = this.onSearch.bind(this);
   }
 
-  componentDidMount() {
-    const id = localStorage.getItem('id');
-    const { onLogin } = this.props;
-    if (id) {
-      fetch(`/api/notifications.js?id=${id}`)
-        .then(res => res.json())
-        .then(res => {
-          onLogin(true);
-          this.setState({ notifications: res });
-        });
+  async componentWillMount() {
+    try{
+      const { onLogin } = this.props;
+      const res = await axios.get('/notifications');
+      this.setState({ notifications: res.data });
+      onLogin(true);
+    } catch(err) {
+      console.log(err);
+      onLogin(false);
     }
+  }
+
+  componentDidMount() {
     window.onscroll = () => {
       if(window.scrollY > 30) {
         this.setState({ down: true });
@@ -118,6 +117,7 @@ class Header extends Component{
               ? (
                   <>
                     <Notifications notes={notifications}/>
+                    <Link href={notifications.url}><a title="Ir a mi perfil">{notifications.name}</a></Link>
                     <button style={{background: "transparent", border: "none"}} onClick={this.props.onNav} id="btn-resp" type="button">
                       {iconBars}
                       <style jsx>{`

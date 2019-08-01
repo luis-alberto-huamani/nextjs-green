@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Popover, PopoverBody } from 'reactstrap';
 import Link from 'next/link';
+import Router from 'next/router';
 import { bindActionCreators } from 'redux';
 import { onLogin } from '../../store/actions';
 import { connect } from 'react-redux';
+import axios from 'axios';
 import './popOver.scss';
 
 class PopOver extends Component {
@@ -12,11 +14,15 @@ class PopOver extends Component {
     this.logOut = this.logOut.bind(this);
   }
 
-  logOut() {
-    const { onLogin } = this.props;
-    window.location = '/';
-    localStorage.removeItem('id');
-    onLogin(false);
+  async logOut() {
+    try{
+      const { onLogin } = this.props;
+      await axios.get('/logout');
+      onLogin(false);
+      Router.push('/');
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   render() {

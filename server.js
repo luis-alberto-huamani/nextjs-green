@@ -8,12 +8,45 @@ const redis = require('redis');
 const mongoose = require('./api/util/mongoose');
 const UserSchema = require('./models/user');
 const FriendReq = require('./utils/classes/friend-req');
+const aws = require('aws-sdk');
+const s3 = new aws.S3({});
+const multer = require('multer');
+const multerS3 = require('multer-s3');
+const dotEnv = require('dotenv');
+const persons = require('./test/persons');
+dotEnv.config();
+const uuid = require('uuid/v1');
+const session = require('express-session');
+const redisSessionStore = require('connect-redis')(session);
+
+const upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: 'greenlink-ftandco',
+    metadata: function (req, file, cb) {
+      cb(null, {fieldName: file.fieldname});
+    },
+    key: function (req, file, cb) {
+      cb(null, file.originalname)
+    }
+  })
+});
 
 app.prepare().then(() => {
   
   [...mongoose]
   const client = redis.createClient(6379, 'greenredis.3j3itc.0001.use2.cache.amazonaws.com');
+  //const client = redis.createClient(6379);
   client.on('connect', () => console.log(`redis on`));
+
+  server.use(session({
+    genid: (req) => uuid(),
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    cookie: { expires: 60000 * 60 * 12},
+    store: new redisSessionStore({ client: client })
+  }))
 
   UserSchema.find({}).then((bdUsers) => {
     const redisUsers = bdUsers.map((user) => {
@@ -65,82 +98,104 @@ app.prepare().then(() => {
       res.status(201).send(user.id);
     }
   
-  });   
-  
-  server.post('/api/login.js', async (req, res) => {
-    const user = req.body;
-    const validateUser = await UserSchema.findOne({ mail: user.mail, pass: user.pass });
-    if (validateUser) {
-      res.status(201).send(validateUser.id);
-    } else {
-      res.status(400).send();
-    }
-  
   });
 
-  server.get('/foo/:id', async (req, res) => {
-    const user = await UserSchema.findById(req.params.id);
-    app.render(req, res, '/foo', { name: user.name });
+  server.post('/api/login', async (req, res) => {
+    try {
+      const { mail, pass } = req.body;
+      const user = await UserSchema.findOne({ mail, pass });
+      req.session.user = user;
+      res.status(200).send(user.id);
+      } catch (err) {
+      res.status(400).send();
+    }
+  });
+
+  server.get('/full', (req, res) => {
+    persons.forEach(async (user) => {
+      const newUser = new UserSchema(user);
+      const name = await newUser.save();
+      console.log(name.name);
+    });
   })
 
-  server.get('/api/perfil.js', async (req, res) => {
-    const { id } = req.query;
-    const user = await UserSchema.findById(id);
-    if (user) {
-      res.status(200).json(user);
-    } else {
-      res.status(400).send();
-    }
-  });
-
-  server.get('/api/notifications.js', async (req, res) => {
-    try {
-      const { id } = req.query;
-      const userInfo = await UserSchema.findById(id);
-      const toSearchBar = [...userInfo.friends, ...userInfo.friendReq];
-      const notifications = {
-        heart: userInfo.comments,
-        friendReq: userInfo.friendReq,
-        gifts: userInfo.gifts,
-        searchBar: toSearchBar,
+  server.get('/perfil/:id', async (req, res) => {
+    try{
+      const sessionId = req.session.user._id;
+      const reqId = req.params.id;
+      const userBD = await UserSchema.findById(reqId);
+      const user = {
+        perfilImg: userBD.perfilImg,
+        name: userBD.name,
+        lastName: userBD.lastName,
+        frontPageQuote: userBD.frontPageQuote,
+        frontPageImg: userBD.frontPageImg,
+        owner: false,
+        id: reqId,
+        friendReq: userBD.friendReq,
+        friends: userBD.friends,
       }
-      res.status(200).json(notifications);
-    } catch (err) {
+      if (reqId === sessionId) {
+        user.owner = true;
+        app.render(req, res, '/perf', { user });
+      } else {
+        const isFriend = await user.friends.find(friend => friend.id === sessionId);
+        const isFriendReqSent = await user.friendReq.find(friend => friend.id === sessionId);
+        const { friendReq } = await UserSchema.findById(sessionId, 'friendReq');
+        console.log(friendReq);
+        const isWaiting = await friendReq.find(friend => friend.id === reqId);
+        console.log(isWaiting);
+        const friend = isFriend ? 'accepted' : isFriendReqSent ? 'sent' : isWaiting ? 'wating' : '';
+        user.friend = friend;
+        app.render(req, res, '/perf', { user });
+      }
+    } catch (err){
       console.log(err);
-      res.status(501).send(err);
+      res.status(400).send();
+    }
+  });
+
+  server.get('/notifications', (req, res) => {
+    const { user } = req.session;
+    if(user) {
+      const notifications = {
+        heart: user.comments,
+        friendReq: user.friendReq,
+        gifts: user.gifts,
+        name: user.name,
+        url: `/perfil/${user._id}`
+      }
+      res.status(200).json(notifications)
+    } else {
+      res.status(400).send();
     }
   })
 
-  server.post('/api/friendRequest.js', async (req, res) => {
-    try {
-      const { currentUser, targetUser } = req.body;
-      const newRequest = await UserSchema.findById(currentUser);
-      const newFriend = {
-        id: currentUser,
-        url: newRequest.url,
-        fullName: newRequest.fullname,
-        perfilImg: newRequest.perfilImg,
-        frontPageQuote: newRequest.frontPageQuote,
-      };
-      const friendRequest = new FriendReq(newFriend);
+  server.get('/sendFriendReq/:id', async (req, res) => {
+    try{
+      const user = req.session.user;
+      const targetUser = req.params.id;
+      const friendReq = {
+        id: user._id,
+        perfilImg: user.perfilImg,
+        fullName: `${user.name} ${user.lastName}`,
+        url: `/perfil/${user._id}`
+      }
       await UserSchema.findByIdAndUpdate(targetUser, {
-        $push: {
-          friendReq: {
-            $each: [friendRequest],
-            $position: 0
-          }
+        $push:{
+          friendReq
         }
       });
       res.status(200).send();
-    } catch (err) {
-      console.log(err);
-      res.status(501).send();
+    } catch (err){
+      res.status(500).send();
     }
-  });
+  })
   
-  server.post('/api/addFriend.js', async (req, res) => {
+  server.get('/aceptFriend/:id', async (req, res) => {
     try {
-      const { currentUser, targetUser } = req.body;
+      const targetUser = req.params.id;
+      const currentUser = req.session.user._id;
       const deleted = await UserSchema.findByIdAndUpdate(currentUser, {
         $pull: {
           friendReq: {
@@ -156,29 +211,64 @@ app.prepare().then(() => {
           friends: newFriend,
         }
       });
-      res.status(200).send();
-    } catch (err) {
-      res.status(501).send(err);
-    }
-  })
-  
-  server.post('/api/rmFriend.js', async (req, res) => {
-    try {
-      const { currentUser, targetUser } = req.body;
-      await UserSchema.findByIdAndUpdate(currentUser, {
-        $pull: {
-          friendReq: {
-            id: targetUser
-          }
-        }
-      });
+      const current = {
+        id: currentUser,
+        url: `/perfil/${currentUser}`,
+        fullName: `${req.session.user.name} ${req.session.user.lastName}`,
+        perfilImg: req.session.user.perfilImg,
+      };
+      await UserSchema.findByIdAndUpdate(targetUser, { $push: { friends: current } });
       res.status(200).send();
     } catch (err) {
       console.log(err);
       res.status(501).send(err);
     }
+  });
+
+  server.get('/cancelFriendReq/:id', async (req, res) => {
+    try{
+      const targetId = req.param.id;
+      const currentId = req.session.user._id;
+      await UserSchema.findByIdAndUpdate(targetId, { $pull: { friendReq: { id: currentId } } });
+      res.status(200).send();
+    } catch (err){
+      console.log(err);
+      res.status(400).send();
+    }
   })
   
+  server.get('/rmFriend/:id', async (req, res) => {
+    try{
+      const targetId = req.params.id;
+      const currentId = req.session.user._id;
+      const rmFriend = async (current, target) => {
+        await UserSchema.findByIdAndUpdate(current, { $pull: { friends: { id: target } } });
+        return;
+      };
+      rmFriend(currentId, targetId);
+      rmFriend(targetId, currentId);
+      res.status(200).send();
+    } catch (err) {
+      console.log(err);
+      redis.status(500).send(err);
+    }
+  })
+
+  server.post('/api/upload/:file', upload.single('file'), async (req, res) => {
+    try{
+      const id = req.session.user._id;
+      const response = await UserSchema.findByIdAndUpdate(id, { [req.params.file]: req.file.location });
+      console.log(response);
+      res.status(200).send(req.file.location);
+    } catch (err) {
+      res.status(400).send(err);
+      console.log(err);
+    }
+  });
+  server.get('/logout', (req, res) => {
+    req.session.destroy();
+    res.status(200).send();
+  });
 
   server.get('*', (req, res) => {
     return handle(req, res)
@@ -189,3 +279,15 @@ app.prepare().then(() => {
     console.log(`> Ready on http://localhost:${port}`)
   })
 })
+
+/*const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'static/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+const upload = multer({
+  storage
+})*/

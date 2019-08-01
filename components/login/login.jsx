@@ -6,6 +6,7 @@ import { validateEmail, validateEmpty } from '../../utils/functions';
 import Fail from './fail';
 import Spinner from '../spinner/spinner';
 import Router from 'next/router';
+import axios from 'axios';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { onUser, userAction } from '../../store/actions';
@@ -45,7 +46,7 @@ class Login extends Component {
     this.setState({ [label]: false });
   }
 
-  onSubmit(e) {
+  async onSubmit(e) {
     const { mail, pass } = this.state;
     const { onUser } = this.props;
     e.preventDefault();
@@ -56,10 +57,21 @@ class Login extends Component {
     } else {
       this.setState({ spinner: true, login: false })
       const data = {
-        mail: mail,
-        pass: pass,
+        mail,
+        pass,
+      };
+      try{
+        const response = await axios.post('/api/login', data);
+        this.setState({ spinner: false, login: true });
+        const id = response.data
+        Router.push(`/perfil/${id}`);
+      } catch {
+        this.setState({ fail: true, login: false, spinner: false });
+        setTimeout(() => {
+          this.setState({ login: true, fail: false });
+        }, 3000);
       }
-      fetch('/api/login.js', {
+      /*fetch('/api/login.js', {
         headers: { "Content-Type": "application/json" },
         method: "POST",
         body: JSON.stringify(data),
@@ -80,7 +92,7 @@ class Login extends Component {
             }
         })
         .catch(err => console.log(err));
-    }
+      */}
   }
 
   render() {

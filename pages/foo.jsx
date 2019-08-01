@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import Layout from '../components/layout/layout';
 import './foo.scss';
-import Header from '../components/perf/header';
 import { Modal, ModalBody, ModalHeader, Button } from 'reactstrap';
-import Quote from '../components/perf/quote';
+import Upload from '../components/perf/btn-upload';
 
 const myUsers = [
   {
@@ -30,6 +28,7 @@ const myUsers = [
 ];
 
 const  person = {
+  id:'12345678910',
   mail: 'person4@mail.com',
   pass: '123456',
   name: 'thera',
@@ -49,44 +48,52 @@ const  person = {
   comments: [],
 };
 
+const AddPost = ({ visible, onClose }) => (
+  <div className="addPost_main_cont">
+    <Modal isOpen={visible}>
+      <div className="addPost_main_cont">
+        <header className="addPost">
+          <input placeholder="Titulo" type="text"/>
+          <Upload />
+        </header>
+        <div className="addPost_body">
+          <textarea name="" id="" />
+        </div>
+        <footer className="addPost">
+          <Button onClick={onClose} size="sm" color="secondary">Cancelar</Button>
+          <Button size="sm" color="success">Crear</Button>
+        </footer>
+      </div>
+    </Modal>
+  </div>
+);
+
 class Foo extends Component{
   constructor(props){
     super(props);
     this.state = {
-      quote: '',
-      quoteVisible:true,
-    }
-    this.handleChange = this.handleChange.bind(this);
-    this.onQuote = this.onQuote.bind(this);
+      addPostVisible: true,
+    };
+    this.onAddPost = this.onAddPost.bind(this);
   }
 
-  handleChange(e) {
-    this.setState({ [e.target.id]: e.target.value });
-  }
-
-  onQuote() {
-    const { quoteVisible } = this.state;
-    this.setState({ quoteVisible: !quoteVisible });
+  onAddPost() {
+    const { addPostVisible } = this.state;
+    this.setState({ addPostVisible: !addPostVisible });
   }
 
   render() {
-    const { quoteVisible, quote } = this.state;
+    const {
+      addPostVisible,
+    } = this.state;
     return(
-      <Layout>
-        <Quote
-          isOpen={quoteVisible}
-          onQuote={this.onQuote}
-          handleChange={this.handleChange}
-          quote={quote}
+      <div className="foo_cont container-fluid">
+        <button onClick={this.onAddPost}>Crear Post</button>
+        <AddPost
+          visible={addPostVisible}
+          onClose={this.onAddPost}
         />
-        <Header
-          user={person}
-          action={{
-            onQuote: this.onQuote
-          }}
-        />
-        <div className="void_space"></div>
-      </Layout>
+      </div>
     );
   }
 }

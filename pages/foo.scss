@@ -1,14 +1,45 @@
+@import 'node_modules/bootstrap/scss/bootstrap';
 @import '../layout/variables';
 
-/*
-      style={{
-        backgroundImage: `url(${person.frontPageImg}) center top no-repeat`,
-        background: '#669f09',
-        backgroundBlendMode: 'multiply',
-        backgroundSize: 'cover',
-        backgroundAttachment: 'fixed',
-      }}
-*/
+
+.foo_cont{
+  margin-top: 50px;
+}
+
+.addPost_main_cont{
+  header.addPost{
+    background: $prim;
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    input{
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid #000;
+      color: #000;
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+  .addPost_body{
+    padding: .3rem;
+    textarea{
+      resize: none;
+      width: 100%;
+    }
+  }
+  footer.addPost{
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: flex-end;
+    button{
+      border-radius: 0;
+      margin-left: .5rem;
+    }
+  }
+}
 
 .void_space{
   height: 1200px;

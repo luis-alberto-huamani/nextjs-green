@@ -29,6 +29,53 @@
       resize: none;
       width: 100%;
     }
+    .suggest_cont{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      input{
+        width: 100%;
+      }
+      ul{
+        position: absolute;
+        background: #fff;
+        top:100%;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border: 1px solid $prim;
+        text-align: center;
+        width: 100%;
+      }
+      button{
+        background: transparent;
+        border: none;
+        color: $prim;
+        width: 100%;
+        &:hover{
+          color: #fff;
+          background: $prim;
+        }
+      }
+    }
+    .wishes_cont{
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+      button{
+        font-size: 14px;
+        color: #fff;
+        background: $prim;
+        border: 1px solid $sec;
+        margin-right: .2rem;
+        &:hover{
+          background: $sec;
+        }
+      }
+    }
   }
   footer.addPost{
     padding: .5rem 1rem;
@@ -44,3 +91,16 @@
 .void_space{
   height: 1200px;
 }
+/*
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::greenlink-ftandco/*"
+        }
+    ]
+}
+*/

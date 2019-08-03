@@ -1,0 +1,71 @@
+@import '../../layout/variables';
+
+.perfil_hero_cont{
+  margin-top: 50px;
+  overflow: hidden;
+  //height: 100vh;
+  //border: 1px solid red;
+}
+
+.gift_cont{
+  width: 70%;
+  //height: 40%;
+  margin: 1rem auto;
+  border: 4px solid #fff;
+  h2{
+    color: $prim;
+    display: inline-block;
+  }
+  span{
+    color: $prim;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  img{
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .gift_info_cont{
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+    font-size: 14px;
+    color: $prim;
+    a{
+      color: $prim;
+    }
+    button{
+      background: $prim;
+      border: 1px solid $sec;
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+}
+
+.user_info{
+  width: 70%;
+  margin: 1rem auto;
+  color: #333;
+  h1{
+    font-size: 1.8rem;
+    color: $prim;
+    text-transform: capitalize;
+  }
+  p{
+    font-size: 16px;
+    margin: .5rem;
+    text-align: justify;
+  }
+  p span{
+    color: $prim;
+    font-weight: 500;
+  }
+}
+
+.user_perfil{
+  height: 100%;
+  background-blend-mode: luminosity;
+}

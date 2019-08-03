@@ -1,0 +1,87 @@
+@import '../../layout/variables';
+@import '../../layout/mixins';
+
+.perfil_hero_cont{
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  .info_cont{
+    @include gradient(45);
+    height: 100vh;
+    padding-top: 50px;
+    color: #fff;
+    transition: 1s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    header{
+      border-top: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      display: inline-block;
+      margin-left: 40px;
+      h1{
+        -webkit-text-stroke: #fff 1px;
+        color: transparent;
+        text-transform: uppercase;
+        margin: 0;
+        font-size: 1.8rem;
+      }
+      span{
+        color: #fff;
+      }
+    }
+    .body_info{
+      margin: 1rem;
+      ul{
+        list-style: none;
+        padding: 0;
+        li{
+          margin: 1rem;
+        }
+        input{
+          background: transparent;
+          color: #fff;
+          border: none;
+          font-size: 16px;
+          &:disabled{
+            color: #fff;
+          }
+        }
+        button{
+          font-size: 16px;
+          background: $prim;
+          border: none;
+          color: #fff;
+          border: 1px solid $sec;
+          &:hover{
+            border: 1px solid #fff;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    footer{
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      ul{
+        list-style: none;
+        display: flex;
+        padding: 0;
+        font-size: 16px;
+        color: #fff;
+        button{
+          background: transparent;
+          border: none;
+          color: #fff;
+          text-transform: capitalize;
+          &:hover{
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}

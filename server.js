@@ -35,8 +35,8 @@ const upload = multer({
 app.prepare().then(() => {
   
   [...mongoose]
-  const client = redis.createClient(6379, 'greenredis.3j3itc.0001.use2.cache.amazonaws.com');
-  //const client = redis.createClient(6379);
+  //const client = redis.createClient(6379, 'greenredis.3j3itc.0001.use2.cache.amazonaws.com');
+  const client = redis.createClient(6379);
   client.on('connect', () => console.log(`redis on`));
 
   server.use(session({

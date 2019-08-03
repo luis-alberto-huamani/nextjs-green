@@ -83,11 +83,13 @@ class Header extends Component{
     const { down, notifications, lookup } = this.state;
     const { isLogin } = this.props;
     return(
-      <header className={classnames({
-        scroll_header: down || isLogin,
-        header_hero_main: true,
-        shadow: down,
-      })}>
+      <header
+        className={classnames({
+          scroll_header: down, //|| isLogin,
+          header_hero_main: true,
+          shadow: down,
+        })}
+      >
 
         <div className="container-fluid header_main_cont animated fadeInDown">
           <Logo />

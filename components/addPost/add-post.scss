@@ -1,0 +1,98 @@
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import '../../layout/variables';
+
+.addPost_main_cont{
+  width: 50%;
+  margin: 0 auto;
+  header.addPost{
+    background: $prim;
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    input{
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid #fff;
+      color: #fff;
+      &:focus{
+        outline: none;
+      }
+    }
+    input::placeholder{
+      color: rgba(255, 255, 255, .7);
+    }
+  }
+  .addPost_body{
+    padding: .3rem 1rem;
+    textarea{
+      margin: 1rem 0;
+      resize: none;
+      width: 100%;
+    }
+    .post_img_cont{
+      img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+    .suggest_cont{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      input{
+        width: 100%;
+      }
+      ul{
+        position: absolute;
+        background: #fff;
+        top:100%;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border: 1px solid $prim;
+        text-align: center;
+        width: 100%;
+      }
+      button{
+        background: transparent;
+        border: none;
+        color: $prim;
+        width: 100%;
+        &:hover{
+          color: #fff;
+          background: $prim;
+        }
+      }
+    }
+    .wishes_cont{
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+      button{
+        font-size: 14px;
+        color: #fff;
+        background: $prim;
+        border: 1px solid $sec;
+        margin-right: .2rem;
+        &:hover{
+          background: $sec;
+        }
+      }
+    }
+  }
+  footer.addPost{
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: flex-end;
+    button{
+      border-radius: 0;
+      margin-left: .5rem;
+    }
+  }
+}
